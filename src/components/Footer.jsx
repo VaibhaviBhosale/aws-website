@@ -4,8 +4,6 @@ import {
   Mail,
   Building2,
   ChevronRight,
-  Instagram,
-  Youtube,
 } from "lucide-react";
 
 import "./Footer.css";
@@ -19,6 +17,7 @@ const quickLinks = [
   { label: "Sports", href: "/sports" },
   { label: "Admission", href: "/admission" },
   { label: "Gallery", href: "/gallery" },
+  { label: "Disclosure", href: "/disclosure" },
 ];
 
 function Footer() {
@@ -27,7 +26,7 @@ function Footer() {
       <div className="footer-container">
         <div className="footer-grid">
 
-          {/* School information */}
+          {/* School branding */}
           <div className="footer-brand">
             <a href="/" className="footer-logo">
               <img src={schoolLogo} alt="Aaryans World School" />
@@ -39,41 +38,41 @@ function Footer() {
             </p>
 
             <div className="footer-socials">
-            <a
+              <a
                 href="https://www.facebook.com/"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Facebook"
-            >
-                <span className="social-letter">f</span>
-            </a>
+              >
+                f
+              </a>
 
-            <a
+              <a
                 href="https://x.com/"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="X"
-            >
-                <span className="social-letter">𝕏</span>
-            </a>
+              >
+                𝕏
+              </a>
 
-            <a
+              <a
                 href="https://www.instagram.com/"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Instagram"
-            >
-                <Instagram size={21} />
-            </a>
+              >
+                ◎
+              </a>
 
-            <a
+              <a
                 href="https://www.youtube.com/"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="YouTube"
-            >
-                <Youtube size={21} />
-            </a>
+              >
+                ▶
+              </a>
             </div>
           </div>
 
@@ -90,13 +89,6 @@ function Footer() {
                   </a>
                 </li>
               ))}
-
-              <li className="footer-disclosure">
-                <a href="/disclosure">
-                  <ChevronRight size={19} />
-                  <span>Disclosure</span>
-                </a>
-              </li>
             </ul>
           </div>
 
@@ -108,7 +100,7 @@ function Footer() {
 
             <div className="footer-contact">
               <span className="contact-icon">
-                <MapPin size={18} fill="currentColor" />
+                <MapPin size={18} />
               </span>
 
               <p>
@@ -120,9 +112,8 @@ function Footer() {
 
             <a className="footer-contact" href="tel:+919699774488">
               <span className="contact-icon">
-                <Phone size={18} fill="currentColor" />
+                <Phone size={18} />
               </span>
-
               <span>+91 96997 74488</span>
             </a>
 
@@ -131,9 +122,8 @@ function Footer() {
               href="mailto:aaryansworldschool@gmail.com"
             >
               <span className="contact-icon">
-                <Mail size={18} fill="currentColor" />
+                <Mail size={18} />
               </span>
-
               <span>aaryansworldschool@gmail.com</span>
             </a>
           </div>
