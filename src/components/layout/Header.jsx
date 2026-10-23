@@ -8,7 +8,7 @@ import {
 } from "lucide-react";
 
 import "./Header.css";
-import schoolLogo from "../assets/images/logo.png";
+import schoolLogo from "../../assets/images/logo_aws.png";
 
 const navigation = [
   {

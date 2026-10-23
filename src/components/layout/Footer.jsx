@@ -7,7 +7,7 @@ import {
 } from "lucide-react";
 
 import "./Footer.css";
-import schoolLogo from "../assets/images/logo.png";
+import schoolLogo from "../../assets/images/logo_aws.png";
 
 const quickLinks = [
   { label: "About Us", href: "/about" },
