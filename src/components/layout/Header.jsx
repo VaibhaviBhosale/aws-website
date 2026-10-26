@@ -8,9 +8,9 @@ const navigation = [
   {
     label: "About Us",
     children: [
-      { label: "About School", href: "/about" },
-      { label: "Our History", href: "/history" },
-      { label: "Management", href: "/management" },
+      { label: "Vision & Mission", href: "/vision-mission" },
+      { label: "Managing Director", href: "/managing-director" },
+      { label: "Directors Panel", href: "/directors-panel" },
     ],
   },
   {

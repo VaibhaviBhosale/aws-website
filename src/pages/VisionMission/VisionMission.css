@@ -1,0 +1,199 @@
+/* =========================================
+   VISION & MISSION - MAIN SECTION
+========================================= */
+
+.philosophy-section { width: 100%; padding: 28px 0 24px; position: relative; overflow: hidden; background: linear-gradient(145deg, #fffdf7 0%, #faf5e8 50%, #fffdf7 100%); }
+.philosophy-section::before { content: ""; position: absolute; top: -180px; left: -180px; width: 400px; height: 400px; border-radius: 50%; background: rgba(223, 194, 125, 0.12); filter: blur(45px); pointer-events: none; }
+.philosophy-section::after { content: ""; position: absolute; right: -150px; bottom: -150px; width: 350px; height: 350px; border-radius: 50%; background: rgba(223, 194, 125, 0.10); filter: blur(45px); pointer-events: none; }
+.vision-container { position: relative; z-index: 1; width: min(1200px, 92%); margin: 0 auto; }
+
+/* =========================================
+   INTRODUCTION
+========================================= */
+
+.vision-intro { margin: 0 auto 24px; text-align: center; }
+.vision-subtitle { display: inline-block; margin-bottom: 6px; color: #a17d31; font-family: "TextaBlack", sans-serif; font-size: 13px; font-weight: 900; letter-spacing: 3px; }
+.vision-intro h1 { margin: 0 0 8px; color: #28394b; font-family: "TextaBlack", sans-serif; font-size: clamp(30px, 3.2vw, 40px); font-weight: 900; line-height: 1.15; }
+.vision-intro p { max-width: 650px; margin: 0 auto; color: #77766e; font-family: "Como", sans-serif; font-size: 15px; font-weight: 700; line-height: 1.5; }
+
+/* =========================================
+   JOURNAL WRAPPER
+========================================= */
+
+.journal-wrapper { width: 100%; max-width: 1050px; margin: 0 auto; }
+.journal-caption { display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 10px; color: #82734f; font-family: "TextaBlack", sans-serif; font-size: 10px; font-weight: 900; letter-spacing: 2.5px; }
+.journal-caption svg { color: #b29a60; flex-shrink: 0; }
+.journal-scene { padding: 6px 8px 10px; perspective: 1800px; }
+
+/* =========================================
+   NOTEBOOK BODY
+========================================= */
+
+.journal-book { position: relative; display: flex; width: 100%; max-width: 920px; height: 310px; min-height: 310px; margin: 0 auto; border: 1px solid #d9d0ba; border-radius: 5px; background: #f3ead5; box-shadow: 0 18px 35px rgba(68, 56, 34, 0.14), 0 5px 12px rgba(68, 56, 34, 0.06); transform: rotateX(0.5deg); }
+
+/* =========================================
+   NOTEBOOK LEFT PAGE
+========================================= */
+
+.journal-left-page { position: relative; display: flex; width: 50%; min-width: 0; flex-direction: column; justify-content: space-between; overflow: hidden; background-color: #fffef9; background-image: repeating-linear-gradient(to bottom, transparent 0, transparent 27px, rgba(178, 196, 214, 0.30) 28px); }
+.journal-page-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 32px; padding: 7px 22px; border-bottom: 1px solid rgba(198, 185, 155, 0.35); color: #9a9079; font-family: "Como", sans-serif; font-size: 8px; font-weight: 700; letter-spacing: 1px; }
+.journal-left-content { display: flex; flex: 1; flex-direction: column; align-items: center; justify-content: center; padding: 18px 20px; text-align: center; }
+.journal-icon { display: flex; width: 58px; height: 58px; align-items: center; justify-content: center; margin-bottom: 12px; border: 1px solid #e7d9b7; border-radius: 50%; background: linear-gradient(145deg, #fffaf0, #f3e8cb); color: #a48a4c; box-shadow: 0 5px 13px rgba(93, 76, 38, 0.07); }
+.journal-small-label { margin-bottom: 5px; color: #9b8245; font-family: "TextaBlack", sans-serif; font-size: 10px; font-weight: 900; letter-spacing: 2px; }
+.journal-left-content h2 { margin: 0 0 9px; color: #344356; font-family: "TextaBlack", sans-serif; font-size: clamp(25px, 2.5vw, 32px); font-weight: 900; line-height: 1.2; }
+.journal-divider { width: 38px; height: 2px; flex-shrink: 0; margin: 0 auto 10px; background: #c5a65e; }
+.journal-left-content > p { max-width: 230px; margin: 0; color: #77766f; font-family: "Como", sans-serif; font-size: 12px; font-weight: 700; line-height: 1.6; }
+
+/* =========================================
+   CENTRAL NOTEBOOK BINDING
+========================================= */
+
+.journal-binding { position: relative; z-index: 4; width: 19px; flex-shrink: 0; background: linear-gradient(to right, #d8cfb8 0%, #f7f0df 28%, #d5c9ad 50%, #f9f3e6 75%, #d6ccb5 100%); box-shadow: -5px 0 9px rgba(54, 46, 30, 0.06), 5px 0 9px rgba(54, 46, 30, 0.07); }
+.journal-binding-shadow { position: absolute; inset: 0; background: linear-gradient(to right, rgba(75, 63, 42, 0.12), transparent 30%, rgba(75, 63, 42, 0.08)); }
+
+/* =========================================
+   NOTEBOOK RIGHT PAGE
+========================================= */
+
+.journal-right-page { position: relative; display: flex; width: calc(50% - 19px); min-width: 0; height: 100%; flex-direction: column; overflow: hidden; background-color: #fffef9; background-image: repeating-linear-gradient(to bottom, transparent 0, transparent 27px, rgba(178, 196, 214, 0.30) 28px); transform-style: preserve-3d; }
+.journal-content-area { position: relative; display: flex; flex: 1; flex-direction: column; justify-content: center; min-width: 0; padding: 20px 30px; }
+.journal-content { width: 100%; }
+.journal-section-label { display: block; margin-bottom: 8px; color: #a18a52; font-family: "TextaBlack", sans-serif; font-size: 9px; font-weight: 900; letter-spacing: 2px; }
+.journal-content h2 { margin: 0 0 12px; color: #2c3c4e; font-family: "TextaBlack", sans-serif; font-size: clamp(24px, 2.5vw, 31px); font-weight: 900; line-height: 1.2; overflow-wrap: anywhere; }
+.journal-heading-line { width: 42px; height: 3px; margin-bottom: 13px; border-radius: 3px; background: #c5a65e; }
+.journal-main-text { margin: 0; color: #5d6269; font-family: "Como", sans-serif; font-size: 13px; font-weight: 700; line-height: 1.7; overflow-wrap: anywhere; }
+.journal-note { margin: 12px 0 0; color: #9a8b69; font-family: "Como", sans-serif; font-size: 10px; font-weight: 700; font-style: italic; line-height: 1.5; }
+.journal-right-page > .journal-page-footer { position: relative; z-index: 2; }
+
+/* =========================================
+   SCHOOL BRANDING PAGE
+========================================= */
+
+.journal-brand-content { display: flex; min-height: 0; height: 100%; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+.journal-brand-content img { display: block; width: 120px; max-width: 65%; max-height: 65px; margin-bottom: 10px; object-fit: contain; }
+.journal-brand-content .journal-divider { margin-bottom: 10px; }
+.journal-brand-content h2 { margin: 0 0 6px; color: #2c3c4e; font-family: "TextaBlack", sans-serif; font-size: clamp(21px, 2.2vw, 27px); font-weight: 900; line-height: 1.25; }
+.journal-brand-content p { margin: 0; color: #84785d; font-family: "Como", sans-serif; font-size: 13px; font-weight: 700; line-height: 1.5; }
+
+/* =========================================
+   ANIMATED PAGE TURNING SHEET
+========================================= */
+
+.journal-turning-sheet { position: absolute; z-index: 8; inset: 0; background-color: #fffef9; background-image: repeating-linear-gradient(to bottom, transparent 0, transparent 27px, rgba(178, 196, 214, 0.30) 28px); transform-style: preserve-3d; transform-origin: left center; backface-visibility: hidden; box-shadow: -8px 0 16px rgba(48, 42, 28, 0.12); }
+.journal-turn-front, .journal-turn-back { position: absolute; inset: 0; display: flex; align-items: center; padding: 25px; backface-visibility: hidden; }
+.journal-turn-front { background-color: #fffef9; background-image: repeating-linear-gradient(to bottom, transparent 0, transparent 27px, rgba(178, 196, 214, 0.30) 28px); }
+.journal-turn-back { transform: rotateY(180deg); background-color: #f7f1e3; background-image: repeating-linear-gradient(to bottom, transparent 0, transparent 27px, rgba(178, 196, 214, 0.25) 28px); }
+.journal-turn-content { width: 100%; }
+.journal-turn-content > span { display: block; margin-bottom: 10px; color: #a18a52; font-family: "TextaBlack", sans-serif; font-size: 9px; font-weight: 900; letter-spacing: 2px; }
+.journal-turn-content h2 { margin: 0 0 12px; color: #2c3c4e; font-family: "TextaBlack", sans-serif; font-size: 25px; font-weight: 900; line-height: 1.25; }
+.journal-turn-content p { margin: 0; color: #5d6269; font-family: "Como", sans-serif; font-size: 12px; font-weight: 700; line-height: 1.7; }
+.journal-turn-back .journal-turn-content { display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; }
+.journal-turn-back .journal-turn-content svg { color: #ad9453; }
+.journal-turn-back .journal-turn-content > span { margin: 0; }
+
+/* =========================================
+   PAGE FOOTER
+========================================= */
+
+.journal-page-footer { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 7px 20px; border-top: 1px solid rgba(198, 185, 155, 0.3); color: #a29a87; font-family: "Como", sans-serif; font-size: 8px; font-weight: 700; letter-spacing: 0.8px; }
+
+/* =========================================
+   PREVIOUS / NEXT NAVIGATION
+========================================= */
+
+.journal-navigation { display: flex; align-items: center; justify-content: center; gap: 18px; margin-top: 12px; }
+.journal-nav-button { display: inline-flex; min-width: 115px; min-height: 38px; align-items: center; justify-content: center; gap: 7px; padding: 8px 16px; border: 1px solid #dfd1ae; border-radius: 5px; background: #fffdf7; color: #354254; font-family: "TextaBlack", sans-serif; font-size: 13px; font-weight: 900; cursor: pointer; box-shadow: 0 3px 8px rgba(60, 49, 26, 0.05); transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease; }
+.journal-nav-button:hover:not(:disabled) { transform: translateY(-2px); border-color: #bca15e; background: #f8f0dc; }
+.journal-nav-button:disabled { opacity: 0.55; cursor: wait; }
+.journal-page-counter { display: flex; align-items: center; gap: 8px; color: #8c7a4e; font-family: "Como", sans-serif; font-size: 11px; font-weight: 700; }
+.journal-counter-line { width: 22px; height: 1px; background: #c5a65e; }
+.journal-hint { margin: 8px 0 0; color: #9b9077; font-family: "Como", sans-serif; font-size: 10px; font-weight: 700; text-align: center; }
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 850px) {
+  .philosophy-section { padding: 24px 0 28px; }
+  .vision-intro { margin-bottom: 20px; }
+  .vision-intro h1 { font-size: clamp(28px, 4vw, 36px); }
+  .journal-book { height: 300px; min-height: 300px; }
+  .journal-left-content { padding: 15px 12px; }
+  .journal-page-top { padding: 7px 12px; font-size: 7px; }
+  .journal-page-footer { padding: 7px 12px; }
+  .journal-content-area { padding: 18px 20px; }
+  .journal-main-text { font-size: 12px; line-height: 1.65; }
+  .journal-icon { width: 52px; height: 52px; margin-bottom: 10px; }
+  .journal-left-content h2 { font-size: 26px; }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .philosophy-section { padding: 28px 0 35px; }
+  .vision-container { width: 92%; }
+  .vision-intro { margin-bottom: 22px; }
+  .vision-subtitle { font-size: 10px; letter-spacing: 2.5px; }
+  .vision-intro h1 { font-size: 29px; }
+  .vision-intro p { font-size: 13px; }
+  .journal-caption { margin-bottom: 10px; font-size: 9px; }
+  .journal-scene { padding: 4px 2px 8px; }
+  .journal-book { flex-direction: column; height: auto; min-height: 0; padding: 5px; }
+  .journal-left-page, .journal-right-page { width: 100%; }
+  .journal-left-page { min-height: 175px; }
+  .journal-left-content { min-height: 140px; padding: 15px; }
+  .journal-icon { width: 48px; height: 48px; margin-bottom: 8px; }
+  .journal-icon svg { width: 25px; height: 25px; }
+  .journal-left-content h2 { margin-bottom: 7px; font-size: 24px; }
+  .journal-small-label { font-size: 9px; }
+  .journal-page-top { min-height: 30px; padding: 7px 12px; font-size: 7px; }
+  .journal-page-footer { padding: 7px 12px; font-size: 7px; }
+  .journal-binding { width: 100%; height: 10px; background: linear-gradient(to bottom, #cfc4aa, #f5eddb 35%, #d3c7ad 70%, #b8a98a); box-shadow: 0 -3px 6px rgba(54,46,30,0.05), 0 3px 6px rgba(54,46,30,0.08); }
+  .journal-binding-shadow { background: linear-gradient(to bottom, rgba(75,63,42,0.12), transparent 35%, rgba(75,63,42,0.08)); }
+  .journal-right-page { min-height: 255px; }
+  .journal-content-area { min-height: 220px; padding: 20px 22px; }
+  .journal-section-label { margin-bottom: 7px; font-size: 8px; }
+  .journal-content h2 { margin-bottom: 10px; font-size: 25px; }
+  .journal-heading-line { margin-bottom: 12px; }
+  .journal-main-text { font-size: 13px; line-height: 1.7; }
+  .journal-note { margin-top: 12px; font-size: 10px; }
+  .journal-brand-content { min-height: 190px; }
+  .journal-brand-content img { width: 100px; max-height: 55px; }
+  .journal-brand-content h2 { font-size: 22px; }
+  .journal-brand-content p { font-size: 12px; }
+  .journal-turn-front, .journal-turn-back { padding: 20px; }
+  .journal-turn-content h2 { font-size: 23px; }
+  .journal-turn-content p { font-size: 12px; }
+  .journal-navigation { gap: 8px; margin-top: 15px; }
+  .journal-nav-button { min-width: 0; min-height: 38px; gap: 6px; padding: 8px 11px; font-size: 12px; }
+  .journal-nav-button svg { width: 16px; height: 16px; }
+  .journal-page-counter { gap: 6px; font-size: 10px; }
+  .journal-counter-line { width: 14px; }
+  .journal-hint { font-size: 10px; }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 360px) {
+  .vision-intro h1 { font-size: 26px; }
+  .vision-intro p { font-size: 12px; }
+  .journal-left-page { min-height: 165px; }
+  .journal-right-page { min-height: 245px; }
+  .journal-content-area { padding: 18px; }
+  .journal-content h2 { font-size: 23px; }
+  .journal-main-text { font-size: 12px; }
+  .journal-navigation { gap: 5px; }
+  .journal-nav-button { padding: 8px 9px; font-size: 11px; }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .journal-nav-button { transition: none; }
+}
