@@ -144,13 +144,14 @@ function Footer() {
             </div>
 
             <div className="footer-map">
-              <iframe
-                title="Aaryans World School Corporate Office Map"
-                src="https://www.google.com/maps?q=Narhe,Pune,Maharashtra&output=embed"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                allowFullScreen
-              />
+            <iframe
+              title="Aaryans World School Corporate Office - ASCON"
+              src="https://maps.google.com/maps?q=18.4547096,73.8278176&z=17&output=embed"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            />
+
             </div>
           </div>
 

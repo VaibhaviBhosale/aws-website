@@ -1,20 +1,10 @@
-
-import { useState } from "react";
-import {
-  ChevronDown,
-  Menu,
-  X,
-  UserRound,
-} from "lucide-react";
-
+import { useState, useEffect, useRef } from "react";
+import { ChevronDown, Menu, X, UserRound } from "lucide-react";
 import "./Header.css";
 import schoolLogo from "../../assets/images/logo_aws.png";
 
 const navigation = [
-  {
-    label: "Home",
-    href: "/",
-  },
+  { label: "Home", href: "/" },
   {
     label: "About Us",
     children: [
@@ -31,10 +21,7 @@ const navigation = [
       { label: "Secondary", href: "/academics/secondary" },
     ],
   },
-  {
-    label: "Branches",
-    href: "/branches",
-  },
+  { label: "Branches", href: "/branches" },
   {
     label: "Gallery",
     children: [
@@ -54,14 +41,43 @@ const navigation = [
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const headerRef = useRef(null);
 
   const closeMenu = () => {
     setMenuOpen(false);
     setActiveDropdown(null);
   };
 
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (headerRef.current && !headerRef.current.contains(event.target)) {
+        setActiveDropdown(null);
+        setMenuOpen(false);
+      }
+    };
+
+    const handleEscape = (event) => {
+      if (event.key === "Escape") {
+        setActiveDropdown(null);
+        setMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("click", handleOutsideClick);
+    document.addEventListener("keydown", handleEscape);
+
+    return () => {
+      document.removeEventListener("click", handleOutsideClick);
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, []);
+
+  const toggleDropdown = (label) => {
+    setActiveDropdown((current) => (current === label ? null : label));
+  };
+
   return (
-    <header className="site-header">
+    <header className="site-header" ref={headerRef}>
       <div className="header-container">
         <a
           href="/"
@@ -77,7 +93,7 @@ function Header() {
           type="button"
           aria-label={menuOpen ? "Close navigation" : "Open navigation"}
           aria-expanded={menuOpen}
-          onClick={() => setMenuOpen(!menuOpen)}
+          onClick={() => setMenuOpen((open) => !open)}
         >
           {menuOpen ? <X size={26} /> : <Menu size={26} />}
         </button>
@@ -92,6 +108,18 @@ function Header() {
                 activeDropdown === item.label ? "dropdown-active" : ""
               }`}
               key={item.label}
+              onMouseEnter={() => {
+                if (window.innerWidth > 950 && item.children) {
+                  setActiveDropdown(item.label);
+                }
+              }}
+              onMouseLeave={() => {
+                if (window.innerWidth > 950 && item.children) {
+                  setActiveDropdown((current) =>
+                    current === item.label ? null : current
+                  );
+                }
+              }}
             >
               {item.children ? (
                 <>
@@ -99,14 +127,14 @@ function Header() {
                     type="button"
                     className="nav-link dropdown-trigger"
                     aria-expanded={activeDropdown === item.label}
-                    onClick={() =>
-                      setActiveDropdown(
-                        activeDropdown === item.label ? null : item.label
-                      )
-                    }
+                    onClick={() => toggleDropdown(item.label)}
                   >
                     {item.label}
-                    <ChevronDown size={15} strokeWidth={2.5} />
+                    <ChevronDown
+                      className="dropdown-chevron"
+                      size={15}
+                      strokeWidth={2.5}
+                    />
                   </button>
 
                   <div className="dropdown-menu">
@@ -150,4 +178,3 @@ function Header() {
 }
 
 export default Header;
-
