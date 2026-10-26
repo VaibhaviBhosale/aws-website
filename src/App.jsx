@@ -1,36 +1,24 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
-
-import VisionMission from "./pages/VisionMission/VisionMission";
-import ManagingDirector from "./pages/ManagingDirector/ManagingDirector";
-
+import Home from "./pages/Home";
 import "./App.css";
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <div className="app">
         <Header />
-
         <main className="main-content">
           <Routes>
-            <Route
-              path="/vision-mission"
-              element={<VisionMission />}
-            />
-
-            <Route
-              path="/managing-director"
-              element={<ManagingDirector />}
-            />
+            <Route path="/" element={<Home />} />
+            {/* Redirect other paths to Home for now or add more routes here */}
+            <Route path="*" element={<Home />} />
           </Routes>
         </main>
-
         <Footer />
       </div>
-    </BrowserRouter>
+    </Router>
   );
 }
 
