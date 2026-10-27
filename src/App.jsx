@@ -8,6 +8,14 @@ import VisionMission from "./pages/VisionMission/VisionMission";
 import ManagingDirector from "./pages/ManagingDirector/ManagingDirector";
 import Leadership from "./pages/Leadership/Leadership";
 
+import BranchPage from "./components/academics/BranchPage";
+import academicsData from "./data/academicsData";
+
+import Pedagogy from "./pages/Academics/Pedagogy";
+import Curriculum from "./pages/Academics/Curriculum";
+import Team from "./pages/Academics/Team";
+import PrincipalDesk from "./pages/Academics/PrincipalDesk";
+
 import "./App.css";
 
 function App() {
@@ -19,6 +27,16 @@ return ( <Router> <div className="app"> <Header />
         <Route path="/vision-mission" element={<VisionMission />} />
         <Route path="/managing-director" element={<ManagingDirector />} />
         <Route path="/leadership" element={<Leadership />} />
+
+<Route path="/academics/bhilarewadi" element={<BranchPage branch={academicsData.bhilarewadi} />} />
+
+<Route path="/academics/warje" element={<BranchPage branch={academicsData.warje} />} />
+
+<Route path="/academics/:branch/:section/pedagogy" element={<Pedagogy />} />
+<Route path="/academics/:branch/:section/curriculum" element={<Curriculum />} />
+<Route path="/academics/:branch/:section/team" element={<Team />} />
+<Route path="/academics/:branch/:section/principal-desk" element={<PrincipalDesk />} />
+
 
         <Route path="*" element={<Home />} />
       </Routes>

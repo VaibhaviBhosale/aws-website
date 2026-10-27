@@ -115,9 +115,8 @@ function Header() {
         >
           {navigation.map((item) => (
             <div
-              className={`nav-item ${
-                activeDropdown === item.label ? "dropdown-active" : ""
-              }`}
+              className={`nav-item ${activeDropdown === item.label ? "dropdown-active" : ""
+                }`}
               key={item.label}
               onMouseEnter={() => {
                 if (window.innerWidth > 950 && item.children) {
@@ -149,23 +148,23 @@ function Header() {
                   </button>
 
                   <div className={`dropdown-menu ${item.label === "Academics" ? "academics-dropdown" : ""}`}>
-  {item.children.map((child) =>
-    child.type === "heading" ? (
-      <div className="academic-group-title" key={child.label}>
-        {child.label}
-      </div>
-    ) : (
-      <a
-        href={child.href}
-        className="dropdown-link"
-        key={child.label}
-        onClick={closeMenu}
-      >
-        {child.label}
-      </a>
-    )
-  )}
-</div>
+                    {item.children.map((child) =>
+                      child.type === "heading" ? (
+                        <div className="academic-group-title" key={child.label}>
+                          {child.label}
+                        </div>
+                      ) : (
+                        <a
+                          href={child.href}
+                          className="dropdown-link"
+                          key={child.label}
+                          onClick={closeMenu}
+                        >
+                          {child.label}
+                        </a>
+                      )
+                    )}
+                  </div>
 
                 </>
               ) : (

@@ -76,18 +76,6 @@ function VisionMission() {
 
   return (
     <section className="philosophy-section">
-
-      <div className="mx-auto mb-6 max-w-3xl rounded-xl bg-amber-100 p-6 text-center shadow-md">
-  <h2 className="text-3xl font-bold text-amber-600">
-    Tailwind CSS is Working!
-  </h2>
-  <p className="mt-2 text-gray-700">
-    Aaryans World School — React + Vite + Tailwind CSS
-  </p>
-</div>
-
-
-
       <div className="vision-container">
         <motion.div
           className="vision-intro"
