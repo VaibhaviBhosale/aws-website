@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+@import "tailwindcss";
 @font-face { font-family: "TextaBlack"; src: url("./assets/fonts/Texta-Black.ttf") format("truetype"); font-weight: 900; font-style: normal; font-display: swap; }
 @font-face { font-family: "Como"; src: url("./assets/fonts/Como-Bold.ttf") format("truetype"); font-weight: 700; font-style: normal; font-display: swap; }
 :root { font-family: "Poppins", Arial, sans-serif; color: #2e3e50; background: #ffffff; font-synthesis: none; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-optical-sizing: auto; font-weight: 400; }

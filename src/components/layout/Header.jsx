@@ -10,15 +10,26 @@ const navigation = [
     children: [
       { label: "Vision & Mission", href: "/vision-mission" },
       { label: "Managing Director", href: "/managing-director" },
-      { label: "Directors Panel", href: "/directors-panel" },
+      { label: "Directors Panel", href: "/leadership" },
     ],
   },
   {
     label: "Academics",
     children: [
-      { label: "Pre Primary", href: "/academics/pre-primary" },
-      { label: "Primary", href: "/academics/primary" },
-      { label: "Secondary", href: "/academics/secondary" },
+      {
+        label: "PUNE",
+        type: "heading",
+      },
+      { label: "Bhilarewadi", href: "/academics/bhilarewadi" },
+      { label: "Warje", href: "/academics/warje" },
+      { label: "Manaji Nagar", href: "/academics/manaji-nagar" },
+      { label: "Undri", href: "/academics/undri" },
+      {
+        label: "OUTSTATION",
+        type: "heading",
+      },
+      { label: "Solapur", href: "/academics/solapur" },
+      { label: "Belagavi", href: "/academics/belagavi" },
     ],
   },
   { label: "Branches", href: "/branches" },
@@ -137,18 +148,25 @@ function Header() {
                     />
                   </button>
 
-                  <div className="dropdown-menu">
-                    {item.children.map((child) => (
-                      <a
-                        href={child.href}
-                        className="dropdown-link"
-                        key={child.label}
-                        onClick={closeMenu}
-                      >
-                        {child.label}
-                      </a>
-                    ))}
-                  </div>
+                  <div className={`dropdown-menu ${item.label === "Academics" ? "academics-dropdown" : ""}`}>
+  {item.children.map((child) =>
+    child.type === "heading" ? (
+      <div className="academic-group-title" key={child.label}>
+        {child.label}
+      </div>
+    ) : (
+      <a
+        href={child.href}
+        className="dropdown-link"
+        key={child.label}
+        onClick={closeMenu}
+      >
+        {child.label}
+      </a>
+    )
+  )}
+</div>
+
                 </>
               ) : (
                 <a

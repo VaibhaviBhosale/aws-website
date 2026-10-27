@@ -76,6 +76,18 @@ function VisionMission() {
 
   return (
     <section className="philosophy-section">
+
+      <div className="mx-auto mb-6 max-w-3xl rounded-xl bg-amber-100 p-6 text-center shadow-md">
+  <h2 className="text-3xl font-bold text-amber-600">
+    Tailwind CSS is Working!
+  </h2>
+  <p className="mt-2 text-gray-700">
+    Aaryans World School — React + Vite + Tailwind CSS
+  </p>
+</div>
+
+
+
       <div className="vision-container">
         <motion.div
           className="vision-intro"
@@ -264,13 +276,7 @@ function VisionMission() {
 
           {/* NAVIGATION */}
           <div className="journal-navigation">
-            <button
-              type="button"
-              className="journal-nav-button"
-              onClick={() => changePage(-1)}
-              disabled={isAnimating}
-              aria-label="Previous page"
-            >
+            <button type="button" className="journal-nav-button" onClick={() => changePage(-1)} disabled={isAnimating} aria-label="Previous page" >
               <ArrowLeft size={18} />
               <span>Previous</span>
             </button>
@@ -281,13 +287,7 @@ function VisionMission() {
               <span>{String(pages.length).padStart(2, "0")}</span>
             </div>
 
-            <button
-              type="button"
-              className="journal-nav-button"
-              onClick={() => changePage(1)}
-              disabled={isAnimating}
-              aria-label="Next page"
-            >
+            <button type="button" className="journal-nav-button" onClick={() => changePage(1)} disabled={isAnimating} aria-label="Next page" >
               <span>Next</span>
               <ArrowRight size={18} />
             </button>

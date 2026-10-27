@@ -4,7 +4,7 @@ import "./ManagingDirector.css";
 
 import directorMain from "../../assets/images/managing-director/World best MD 1.jpg";
 import directorDesk from "../../assets/images/managing-director/World best MD.jpg";
-import directorBackground from "../../assets/images/backgrounds/best in aaryans world school.jpg";
+import directorBackground from "../../assets/images/background/best in aaryans world school.jpg";
 
 function ManagingDirector() {
   return (
@@ -98,29 +98,27 @@ function ManagingDirector() {
 
             <div className="md-message">
               <p>
-                At our school, education is a transformative journey—one that
-                goes beyond textbooks to shape minds, character, and purpose.
-                Our vision is to create a learning community that empowers
-                students to think independently, act responsibly, and lead with
-                compassion in an ever-evolving global landscape.
+                At our school, education is a transformative journey—one that 
+                goes beyond textbooks to shape minds, character, and purpose. 
+                Our vision is to create a learning community that empowers students 
+                to think independently, act responsibly, and lead with compassion 
+                in an ever-evolving global landscape.
               </p>
 
               <p>
-                We recognize that every child carries within them limitless
-                potential. Guided by this belief, we foster an environment
-                that inspires curiosity, innovation, and excellence. Through
-                a balanced focus on academic rigour, values-based education,
-                and experiential learning, we prepare our students to face
-                future challenges with confidence, resilience, and integrity.
+                We recognize that every child carries within them limitless potential. 
+                Guided by this belief, we foster an environment that inspires curiosity, 
+                innovation, and excellence. Through a balanced focus on academic rigour, 
+                values-based education, and experiential learning, we prepare our students 
+                to face future challenges with confidence, resilience, and integrity.
               </p>
 
               <p>
-                Our educators play a pivotal role in translating this vision
-                into reality by nurturing creativity, critical thinking, and
-                ethical leadership. In strong partnership with parents, we
-                strive to instil enduring values, discipline, and a lifelong
-                love for learning—qualities essential for building not just
-                successful careers, but good human beings.
+                Our educators play a pivotal role in translating this vision into reality 
+                by nurturing creativity, critical thinking, and ethical leadership. In strong 
+                partnership with parents, we strive to instil enduring values, discipline, 
+                and a lifelong love for learning—qualities essential for building not just 
+                successful careers, but good human being.
               </p>
             </div>
 
