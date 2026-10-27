@@ -2,6 +2,10 @@ import { useEffect, useState } from "react";
 import "../styles/Home.css";
 import heroVideo from "../assets/videos/slider.MP4";
 import historyButton from "../assets/images/Buttons.jpg";
+import enquiryBackground from "../assets/images/background/best in aaryans world school.jpg";
+import enquiryImage1 from "../assets/images/home/AARYANS WORLD SCHOOL-95.jpg";
+import enquiryImage2 from "../assets/images/home/AARYANS WORLD SCHOOL-96.png";
+import galleryBackground from "../assets/images/background/gallery-bg.jpg";
 
 const campusImages = [
   {
@@ -288,7 +292,6 @@ function WelcomeSection() {
 
 
 
-
 function QuickEnquiry() {
   const [formData, setFormData] = useState({
     studentName: "",
@@ -300,7 +303,18 @@ function QuickEnquiry() {
     message: "",
   });
 
-  const [message, setMessage] = useState("");
+  const [statusMessage, setStatusMessage] = useState("");
+  const [currentImage, setCurrentImage] = useState(0);
+
+  const enquiryImages = [enquiryImage1, enquiryImage2];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((previous) => (previous + 1) % enquiryImages.length);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -314,40 +328,45 @@ function QuickEnquiry() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    setMessage(
+    setStatusMessage(
       "Your enquiry form is ready. Backend submission will be connected later."
     );
   };
 
+  const classes = [
+    "Nursery",
+    "LKG",
+    "UKG",
+    "Class 1",
+    "Class 2",
+    "Class 3",
+    "Class 4",
+    "Class 5",
+    "Class 6-10",
+  ];
+
   return (
-    <section className="enquiry-section" id="quick-enquiry">
+    <section
+      id="quick-enquiry"
+      className="enquiry-section"
+      style={{
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.20)), url("${enquiryBackground}")`,
+      }}
+    >
       <div className="enquiry-container">
         <div className="enquiry-promo">
-          <span className="promo-top-label">AARYANS WORLD SCHOOL</span>
-
-          <h2>
-            Excellence
-            <br />
-            in Education
-          </h2>
-
-          <div className="promo-illustration">
-            <img
-              src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=900&q=85"
-              alt="Children learning and growing"
-            />
-          </div>
-
-          <div className="promo-bottom">
-            <span>LEARNING TODAY</span>
-            <strong>LEADING TOMORROW</strong>
-          </div>
+          <img
+            key={currentImage}
+            src={enquiryImages[currentImage]}
+            alt="Aaryans World School"
+            className="enquiry-promo-image"
+          />
         </div>
 
         <div className="enquiry-card">
           <div className="enquiry-card-heading">
-            <span>➤</span>
-            Quick Enquiry
+            <span aria-hidden="true">➤</span>
+            <h2>Quick Enquiry</h2>
           </div>
 
           <form className="enquiry-form" onSubmit={handleSubmit}>
@@ -367,7 +386,6 @@ function QuickEnquiry() {
             <div className="form-row">
               <div className="form-field">
                 <label htmlFor="className">Select Class</label>
-
                 <select
                   id="className"
                   name="className"
@@ -377,24 +395,7 @@ function QuickEnquiry() {
                 >
                   <option value="">Choose...</option>
 
-                  {[
-                    "Playgroup",
-                    "Nursery",
-                    "Jr. KG",
-                    "Sr. KG",
-                    "1st",
-                    "2nd",
-                    "3rd",
-                    "4th",
-                    "5th",
-                    "6th",
-                    "7th",
-                    "8th",
-                    "9th",
-                    "10th",
-                    "11th",
-                    "12th",
-                  ].map((className) => (
+                  {classes.map((className) => (
                     <option key={className} value={className}>
                       {className}
                     </option>
@@ -420,7 +421,6 @@ function QuickEnquiry() {
 
             <div className="form-field">
               <label htmlFor="branch">Select Branch</label>
-
               <select
                 id="branch"
                 name="branch"
@@ -439,7 +439,6 @@ function QuickEnquiry() {
 
             <div className="form-field">
               <label htmlFor="mobile">Contact Number</label>
-
               <input
                 id="mobile"
                 name="mobile"
@@ -456,7 +455,6 @@ function QuickEnquiry() {
 
             <div className="form-field">
               <label htmlFor="email">Email</label>
-
               <input
                 id="email"
                 name="email"
@@ -470,15 +468,13 @@ function QuickEnquiry() {
 
             <div className="form-field">
               <label htmlFor="message">Message</label>
-
               <textarea
                 id="message"
                 name="message"
-                rows="4"
+                rows={3}
                 placeholder="Enter your enquiry..."
                 value={formData.message}
                 onChange={handleChange}
-                required
               />
             </div>
 
@@ -486,9 +482,9 @@ function QuickEnquiry() {
               Submit Enquiry
             </button>
 
-            {message && (
+            {statusMessage && (
               <p className="enquiry-status" role="status">
-                {message}
+                {statusMessage}
               </p>
             )}
           </form>
@@ -498,52 +494,120 @@ function QuickEnquiry() {
   );
 }
 
+
+
+
+
+
 function CampusGallery() {
+  const videos = [
+    {
+      id: "6hAVWc-KSLQ",
+      title: "Campus Highlights",
+    },
+    {
+      id: "k51LjwvQ1FE",
+      title: "Annual Sports Day",
+    },
+    {
+      id: "Nw5Kokj2OgQ",
+      title: "Cultural Events",
+    },
+    {
+      id: "gv9TH9Ai-Ic",
+      title: "Student Life",
+    },
+    {
+      id: "uAMjvQvZ_xM",
+      title: "Swimming Academy",
+    },
+    {
+      id: "CEXDaltpxKQ",
+      title: "Campus Life",
+    },
+  ];
+
+  const [activeVideo, setActiveVideo] = useState(null);
+
   return (
-    <section className="campus-section">
+    <section
+      className="campus-section"
+      style={{
+        backgroundImage: `url("${galleryBackground}")`,
+      }}
+    >
       <div className="campus-container">
-        <SectionHeading
-          eyebrow="LIFE AT CAMPUS"
-          title={
-            <>
-              Experience Aaryans <span>in Action</span>
-            </>
-          }
-          description="Watch our students, events, and campus life unfold."
-        />
+        <div className="home-section-heading">
+          <span className="home-eyebrow">
+            <span className="campus-heading-line"></span>
+            LIFE AT CAMPUS
+          </span>
+
+          <h2>Experience Aaryans in Action</h2>
+
+          <p>Watch our students, events, and campus life unfold.</p>
+        </div>
 
         <div className="campus-video-grid">
-          {campusVideos.map((video, index) => (
-            <a
-              href={video.videoUrl}
-              target="_blank"
-              rel="noreferrer"
+          {videos.map((video) => (
+            <button
+              type="button"
               className="campus-video-card"
-              key={video.title}
+              key={video.id}
+              onClick={() => setActiveVideo(video)}
+              aria-label={`Play ${video.title}`}
             >
               <div className="campus-video-image">
-                <img src={video.image} alt={video.title} />
+                <img
+                  src={`https://img.youtube.com/vi/${video.id}/hqdefault.jpg`}
+                  alt={video.title}
+                  loading="lazy"
+                />
 
-                <span
-                  className={`campus-play-button ${
-                    index === 2 ? "campus-play-yellow" : ""
-                  }`}
-                >
-                  ▶
+                <span className="campus-play-button">
+                  <span aria-hidden="true">▶</span>
                 </span>
               </div>
-
-              <div className="campus-video-info">
-                <span>{video.category}</span>
-                <h3>{video.title}</h3>
-              </div>
-            </a>
+            </button>
           ))}
         </div>
       </div>
+
+      {activeVideo && (
+        <div
+          className="campus-video-modal"
+          role="dialog"
+          aria-modal="true"
+          aria-label={activeVideo.title}
+          onClick={() => setActiveVideo(null)}
+        >
+          <div
+            className="campus-video-modal-content"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <button
+              type="button"
+              className="campus-video-modal-close"
+              onClick={() => setActiveVideo(null)}
+              aria-label="Close video"
+            >
+              &times;
+            </button>
+
+            <iframe
+              src={`https://www.youtube.com/embed/${activeVideo.id}?autoplay=1`}
+              title={activeVideo.title}
+              allow="autoplay; encrypted-media; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 }
+
+
 
 function PremiumVentures() {
   return (
@@ -615,9 +679,10 @@ function FloatingActions() {
   );
 }
 
+
 function Home() {
   return (
-    <>
+    <div className="home-page">
       <HeroSlider />
       <QuickNavigation />
       <WelcomeSection />
@@ -626,8 +691,10 @@ function Home() {
       <PremiumVentures />
       <SchoolStatistics />
       <FloatingActions />
-    </>
+    </div>
   );
 }
 
 export default Home;
+
+
