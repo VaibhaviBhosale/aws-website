@@ -6,6 +6,21 @@ import enquiryBackground from "../assets/images/background/best in aaryans world
 import enquiryImage1 from "../assets/images/home/AARYANS WORLD SCHOOL-95.jpg";
 import enquiryImage2 from "../assets/images/home/AARYANS WORLD SCHOOL-96.png";
 import galleryBackground from "../assets/images/background/gallery-bg.jpg";
+import campusBackground from "../assets/images/background/BG1.jpg";
+
+import venturesBackground from "../assets/images/background/best in aaryans world school.jpg";
+
+import venture1 from "../assets/images/ventures/Aaryans YO Bhajiwala.jpg";
+import venture2 from "../assets/images/ventures/Aarayans Commando Training Camp.jpg";
+import venture3 from "../assets/images/ventures/AFF.jpg";
+import venture4 from "../assets/images/ventures/Aaryans Preschool- Best School in Pune.jpg";
+import venture5 from "../assets/images/ventures/Aaryans Sarpner.jpg";
+import venture6 from "../assets/images/ventures/Aaryans Riverwwod Resort.jpg";
+import venture7 from "../assets/images/ventures/Akshara Food Court.jpeg";
+import venture8 from "../assets/images/ventures/Aaryans Edutainment Park.jpg";
+import venture9 from "../assets/images/ventures/Aaryans Dog Kennel.jpg";
+import venture10 from "../assets/images/ventures/Aaryans Day Care.jpg";
+import venture11 from "../assets/images/ventures/Aaryans Dairy Farm.jpg";
 
 const campusImages = [
   {
@@ -74,61 +89,17 @@ const campusVideos = [
 ];
 
 const ventures = [
-  {
-    name: "Aaryans Manomilan",
-    image:
-      "https://placehold.co/300x180/ffffff/273449?text=Aaryans+Manomilan",
-  },
-  {
-    name: "Aaryans Commando",
-    image:
-      "https://placehold.co/300x180/ffffff/273449?text=Aaryans+Commando",
-  },
-  {
-    name: "Aaryans Farm",
-    image:
-      "https://placehold.co/300x180/ffffff/273449?text=Aaryans+Farm",
-  },
-  {
-    name: "Aaryans Preschool",
-    image:
-      "https://placehold.co/300x180/ffffff/273449?text=Aaryans+Preschool",
-  },
-  {
-    name: "Aaryans Learning",
-    image:
-      "https://placehold.co/300x180/ffffff/273449?text=Aaryans+Learning",
-  },
-  {
-    name: "Riverwood Resort",
-    image:
-      "https://placehold.co/300x180/ffffff/273449?text=Riverwood+Resort",
-  },
-  {
-    name: "Akshara Food Court",
-    image:
-      "https://placehold.co/300x180/ffffff/273449?text=Akshara+Food+Court",
-  },
-  {
-    name: "Aaryans Development Park",
-    image:
-      "https://placehold.co/300x180/ffffff/273449?text=Development+Park",
-  },
-  {
-    name: "Aaryans Dog Kennel",
-    image:
-      "https://placehold.co/300x180/ffffff/273449?text=Dog+Kennel",
-  },
-  {
-    name: "Aaryans Day Care",
-    image:
-      "https://placehold.co/300x180/ffffff/273449?text=Day+Care",
-  },
-  {
-    name: "Aaryans Dairy",
-    image:
-      "https://placehold.co/300x180/ffffff/273449?text=Aaryans+Dairy",
-  },
+    { img: venture1, name: "Aaryans YO Bhajiwala" },
+    { img: venture2, name: "Aaryans Commando Training Camp" },
+    { img: venture3, name: "Aaryans Farm Fresh" },
+    { img: venture4, name: "Aaryans Preschool" },
+    { img: venture5, name: "Aaryans Sharpner" },
+    { img: venture6, name: "Aaryans Riverwood Resort" },
+    { img: venture7, name: "Akshara Food Court" },
+    { img: venture8, name: "Aaryans Edutainment Park" },
+    { img: venture9, name: "Aaryans Dog Kennel" },
+    { img: venture10, name: "Aaryans Day Care" },
+    { img: venture11, name: "Aaryans Dairy Farm" },
 ];
 
 const statistics = [
@@ -495,45 +466,23 @@ function QuickEnquiry() {
 }
 
 
-
-
-
-
 function CampusGallery() {
   const videos = [
-    {
-      id: "6hAVWc-KSLQ",
-      title: "Campus Highlights",
-    },
-    {
-      id: "k51LjwvQ1FE",
-      title: "Annual Sports Day",
-    },
-    {
-      id: "Nw5Kokj2OgQ",
-      title: "Cultural Events",
-    },
-    {
-      id: "gv9TH9Ai-Ic",
-      title: "Student Life",
-    },
-    {
-      id: "uAMjvQvZ_xM",
-      title: "Swimming Academy",
-    },
-    {
-      id: "CEXDaltpxKQ",
-      title: "Campus Life",
-    },
+    { id: "6hAVWc-KSLQ", title: "Campus Highlights" },
+    { id: "k51LjwvQ1FE", title: "Annual Sports Day" },
+    { id: "Nw5Kokj2OgQ", title: "Cultural Events" },
+    { id: "gv9TH9Ai-Ic", title: "Student Life" },
+    { id: "uAMjvQvZ_xM", title: "Swimming Academy" },
+    { id: "CEXDaltpxKQ", title: "Campus Life" },
   ];
 
   const [activeVideo, setActiveVideo] = useState(null);
 
   return (
     <section
-      className="campus-section"
+      className="campus-section custom-video-bg"
       style={{
-        backgroundImage: `url("${galleryBackground}")`,
+        backgroundImage: `url("${campusBackground}")`,
       }}
     >
       <div className="campus-container">
@@ -564,8 +513,8 @@ function CampusGallery() {
                   loading="lazy"
                 />
 
-                <span className="campus-play-button">
-                  <span aria-hidden="true">▶</span>
+                <span className="campus-play-button" aria-hidden="true">
+                  ▶
                 </span>
               </div>
             </button>
@@ -597,7 +546,7 @@ function CampusGallery() {
             <iframe
               src={`https://www.youtube.com/embed/${activeVideo.id}?autoplay=1`}
               title={activeVideo.title}
-              allow="autoplay; encrypted-media; picture-in-picture"
+              allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
               allowFullScreen
             />
           </div>
@@ -609,32 +558,56 @@ function CampusGallery() {
 
 
 
-function PremiumVentures() {
-  return (
-    <section className="ventures-section">
-      <div className="ventures-container">
-        <SectionHeading
-          eyebrow="BEYOND ACADEMICS"
-          title="Our Premium Ventures"
-          description="Specialized divisions designed to nurture talent and leadership in every field."
-        />
 
-        <div className="ventures-grid">
-          {ventures.map((venture) => (
-            <a
-              href="#ventures"
-              className="venture-card"
-              key={venture.name}
-              title={venture.name}
-            >
-              <img src={venture.image} alt={venture.name} />
-            </a>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
+function PremiumVentures() {
+    return (
+        <section
+            className="ventures-section"
+            style={{
+                backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.20)), url("${venturesBackground}")`,
+            }}
+        >
+            <div className="ventures-container">
+                <div className="ventures-heading">
+                    <span className="ventures-subtitle">
+                        <span className="ventures-heading-line"></span>
+                        BEYOND ACADEMICS
+                    </span>
+
+                    <h2>Our Premium Ventures</h2>
+
+                    <div className="ventures-title-underline"></div>
+
+                    <p>
+                        Specialized divisions designed to nurture talent and
+                        leadership in every field.
+                    </p>
+                </div>
+
+                <div className="ventures-grid">
+                    {ventures.map((venture, index) => (
+                        <div
+                            className="venture-item"
+                            key={venture.name}
+                            style={{ animationDelay: `${index * 30}ms` }}
+                        >
+                            <div className="venture-mini-card">
+                                <div className="venture-logo-wrapper">
+                                    <img
+                                        src={venture.img}
+                                        alt={venture.name}
+                                        loading="lazy"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
 }
+
 
 function SchoolStatistics() {
   return (
