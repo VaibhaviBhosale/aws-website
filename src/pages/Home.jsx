@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "../styles/Home.css";
 import heroVideo from "../assets/videos/slider.MP4";
+import schoolLogo from "../assets/images/logo_aws.png";
 import historyButton from "../assets/images/Buttons.jpg";
 import enquiryBackground from "../assets/images/background/best in aaryans world school.jpg";
 import enquiryImage1 from "../assets/images/home/AARYANS WORLD SCHOOL-95.jpg";
@@ -334,6 +335,8 @@ function QuickEnquiry() {
           />
         </div>
 
+
+
         <div className="enquiry-card">
           <div className="enquiry-card-heading">
             <span aria-hidden="true">➤</span>
@@ -347,119 +350,128 @@ function QuickEnquiry() {
                 id="studentName"
                 name="studentName"
                 type="text"
-                placeholder="Enter Full Name"
-                value={formData.studentName}
-                onChange={handleChange}
+                placeholder="Enter Student Full Name"
                 required
               />
             </div>
 
             <div className="form-row">
               <div className="form-field">
-                <label htmlFor="className">Select Class</label>
-                <select
-                  id="className"
-                  name="className"
-                  value={formData.className}
-                  onChange={handleChange}
-                  required
-                >
-                  <option value="">Choose...</option>
+                <label htmlFor="dob">Date of Birth</label>
+                <input id="dob" name="dob" type="date" required />
+              </div>
+              <div className="form-field">
+                <label htmlFor="gender">Gender</label>
+                <select id="gender" name="gender" defaultValue="" required>
+                  <option value="">Select Gender</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                </select>
+              </div>
+            </div>
 
+            <div className="form-row">
+              <div className="form-field">
+                <label htmlFor="className">Standard</label>
+                <select id="className" name="className" defaultValue="" required>
+                  <option value="">Select Standard</option>
                   {classes.map((className) => (
-                    <option key={className} value={className}>
-                      {className}
-                    </option>
+                    <option key={className} value={className}>{className}</option>
                   ))}
                 </select>
               </div>
-
               <div className="form-field">
-                <label htmlFor="age">Enter Age</label>
-                <input
-                  id="age"
-                  name="age"
-                  type="number"
-                  min="2"
-                  max="25"
-                  placeholder="Age"
-                  value={formData.age}
-                  onChange={handleChange}
-                  required
-                />
+                <label htmlFor="admissionYear">Admission for Year</label>
+                <input id="admissionYear" name="admissionYear" placeholder="2026-27" />
               </div>
             </div>
 
             <div className="form-field">
-              <label htmlFor="branch">Select Branch</label>
-              <select
-                id="branch"
-                name="branch"
-                value={formData.branch}
-                onChange={handleChange}
-                required
-              >
-                <option value="">Choose Branch...</option>
-                <option value="Bhilarewadi">Bhilarewadi</option>
-                <option value="Pune">Pune</option>
-                <option value="Solapur">Solapur</option>
-                <option value="Belagavi">Belagavi</option>
-                <option value="Hubballi">Hubballi</option>
-              </select>
+              <label htmlFor="fatherName">Father's Name</label>
+              <input id="fatherName" name="fatherName" placeholder="Enter Father's Name" required />
             </div>
 
             <div className="form-field">
-              <label htmlFor="mobile">Contact Number</label>
-              <input
-                id="mobile"
-                name="mobile"
-                type="tel"
-                inputMode="numeric"
-                pattern="[0-9]{10}"
-                maxLength={10}
-                placeholder="Mobile Number"
-                value={formData.mobile}
-                onChange={handleChange}
-                required
-              />
+              <label htmlFor="address">Address</label>
+              <textarea id="address" name="address" rows={2} placeholder="Enter Address" required />
+            </div>
+
+            <div className="form-row">
+              <div className="form-field">
+                <label htmlFor="pin">PIN Code</label>
+                <input id="pin" name="pin" inputMode="numeric" maxLength={6} pattern="[0-9]{6}" placeholder="6-digit PIN" />
+              </div>
+              <div className="form-field">
+                <label htmlFor="fatherQualification">Father's Qualification</label>
+                <input id="fatherQualification" name="fatherQualification" placeholder="Qualification" />
+              </div>
+            </div>
+
+            <div className="form-row">
+              <div className="form-field">
+                <label htmlFor="fatherMobile">Father's Mobile</label>
+                <input id="fatherMobile" name="fatherMobile" type="tel" inputMode="numeric" pattern="[0-9]{10}" maxLength={10} placeholder="Mobile Number" required />
+              </div>
+              <div className="form-field">
+                <label htmlFor="fatherWhatsapp">Father's WhatsApp</label>
+                <input id="fatherWhatsapp" name="fatherWhatsapp" type="tel" inputMode="numeric" pattern="[0-9]{10}" maxLength={10} placeholder="WhatsApp Number" />
+              </div>
             </div>
 
             <div className="form-field">
-              <label htmlFor="email">Email</label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                placeholder="name@example.com"
-                value={formData.email}
-                onChange={handleChange}
-                required
-              />
+              <label htmlFor="fatherEmail">Father's Email</label>
+              <input id="fatherEmail" name="fatherEmail" type="email" placeholder="name@example.com" />
+            </div>
+
+            <div className="form-row">
+              <div className="form-field">
+                <label htmlFor="motherQualification">Mother's Qualification</label>
+                <input id="motherQualification" name="motherQualification" placeholder="Qualification" />
+              </div>
+              <div className="form-field">
+                <label htmlFor="motherMobile">Mother's Mobile</label>
+                <input id="motherMobile" name="motherMobile" type="tel" inputMode="numeric" pattern="[0-9]{10}" maxLength={10} placeholder="Mobile Number" />
+              </div>
+            </div>
+
+            <div className="form-row">
+              <div className="form-field">
+                <label htmlFor="motherEmail">Mother's Email</label>
+                <input id="motherEmail" name="motherEmail" type="email" placeholder="name@example.com" />
+              </div>
+              <div className="form-field">
+                <label htmlFor="motherWhatsapp">Mother's WhatsApp</label>
+                <input id="motherWhatsapp" name="motherWhatsapp" type="tel" inputMode="numeric" pattern="[0-9]{10}" maxLength={10} placeholder="WhatsApp Number" />
+              </div>
+            </div>
+
+            <div className="form-row">
+              <div className="form-field">
+                <label htmlFor="previousSchool">Previous School</label>
+                <input id="previousSchool" name="previousSchool" placeholder="Previous School Name" />
+              </div>
+              <div className="form-field">
+                <label htmlFor="previousStandard">Previous Standard</label>
+                <input id="previousStandard" name="previousStandard" placeholder="Previous Standard" />
+              </div>
             </div>
 
             <div className="form-field">
-              <label htmlFor="message">Message</label>
-              <textarea
-                id="message"
-                name="message"
-                rows={3}
-                placeholder="Enter your enquiry..."
-                value={formData.message}
-                onChange={handleChange}
-              />
+              <label htmlFor="leavingReason">Reason for Leaving Previous School</label>
+              <textarea id="leavingReason" name="leavingReason" rows={2} placeholder="Enter Reason" />
             </div>
 
-            <button type="submit" className="enquiry-submit-button">
-              Submit Enquiry
-            </button>
+            <button type="submit" className="enquiry-submit-button">Submit Enquiry</button>
 
             {statusMessage && (
-              <p className="enquiry-status" role="status">
-                {statusMessage}
-              </p>
+              <p className="enquiry-status" role="status">{statusMessage}</p>
             )}
           </form>
         </div>
+
+
+
+
       </div>
     </section>
   );

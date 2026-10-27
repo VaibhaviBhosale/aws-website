@@ -1,16 +1,30 @@
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
 @import "tailwindcss";
-@font-face { font-family: "TextaBlack"; src: url("./assets/fonts/Texta-Black.ttf") format("truetype"); font-weight: 900; font-style: normal; font-display: swap; }
-@font-face { font-family: "Como"; src: url("./assets/fonts/Como-Bold.ttf") format("truetype"); font-weight: 700; font-style: normal; font-display: swap; }
-:root { font-family: "Poppins", Arial, sans-serif; color: #2e3e50; background: #ffffff; font-synthesis: none; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-optical-sizing: auto; font-weight: 400; }
-* { box-sizing: border-box; }
-html { min-width: 320px; scroll-behavior: smooth; }
-body { min-width: 320px; margin: 0; }
-button, input, select, textarea { font: inherit; }
-button, a { -webkit-tap-highlight-color: transparent; }
-img { max-width: 100%; }
-a { color: inherit; }
-#root { min-height: 100vh; }
-.app { min-height: 100vh; display: flex; flex-direction: column; }
-.main-content { flex: 1; }
-@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; } }
+
+@font-face {font-family: "TextaBlack";src: url("./assets/fonts/Texta-Black.ttf") format("truetype");font-weight: 900;font-style: normal;font-display: swap;}
+@font-face {font-family: "Como";src: url("./assets/fonts/Como-Bold.ttf") format("truetype");font-weight: 700;font-style: normal;font-display: swap;}
+:root {font-family: "Poppins", Arial, sans-serif;color: #2e3e50;background: #ffffff;font-synthesis: none;text-rendering: optimizeLegibility;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;font-optical-sizing: auto;font-weight: 400;}
+
+* {box-sizing: border-box;}
+html {min-width: 320px;scroll-behavior: smooth;}
+body {min-width: 320px;margin: 0;}
+button,input,select,textarea {font: inherit;}
+button,a {-webkit-tap-highlight-color: transparent;}
+img {max-width: 100%;}
+a {color: inherit;}
+#root {min-height: 100vh;}
+.app {min-height: 100vh;display: flex;flex-direction: column;}
+.main-content {flex: 1;}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
