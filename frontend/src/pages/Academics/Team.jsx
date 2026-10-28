@@ -40,6 +40,11 @@ function Team() {
 
   const getImagePath = (image) => `${imageFolder}/${image}`;
 
+  const getGroupImagePath = (image) =>
+    branchKey === "manajinagar"
+      ? `/images/team/manajinagar/${image}`
+      : getImagePath(image);
+
   // Reusable profile card for leadership and coordinators
   const ProfileCard = ({ person }) => (
     <article className="group h-full rounded-3xl bg-white p-6 text-center shadow-[0_5px_25px_rgba(35,52,78,0.08)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_15px_35px_rgba(35,52,78,0.15)]">
@@ -59,6 +64,13 @@ function Team() {
       <p className="text-base font-semibold leading-relaxed text-[#d49c07]">
         {person.designation}
       </p>
+
+      {person.grades && (
+        <p className="mt-2 text-sm font-medium text-gray-600">
+          <span className="font-bold text-[#23344e]">Grade:</span>{" "}
+          {person.grades}
+        </p>
+      )}
 
       <div className="mx-auto my-4 h-[3px] w-16 rounded-full bg-[#d49c07]" />
 
@@ -83,13 +95,12 @@ function Team() {
         )}
 
         <div
-          className={`mx-auto grid max-w-6xl grid-cols-1 gap-8 ${
-            people.length === 1
+          className={`mx-auto grid max-w-6xl grid-cols-1 gap-8 ${people.length === 1
               ? "md:max-w-xl"
               : people.length === 2
                 ? "md:grid-cols-2"
                 : "md:grid-cols-2 lg:grid-cols-3"
-          }`}
+            }`}
         >
           {people.map((person, index) => (
             <ProfileCard
@@ -139,7 +150,7 @@ function Team() {
         <div className="rounded-3xl bg-white p-4 shadow-[0_5px_25px_rgba(35,52,78,0.08)] sm:p-6 md:p-8">
           <div className="overflow-hidden rounded-2xl">
             <img
-              src={getImagePath(groupTeam.image)}
+              src={getGroupImagePath(groupTeam.image)}
               alt={groupTeam.imageAlt || groupTeam.title}
               loading="lazy"
               className="h-[220px] w-full object-cover sm:h-[320px] md:h-[420px] lg:h-[480px]"
@@ -195,12 +206,21 @@ function Team() {
           {/* Leadership: Director, Principal, Vice Principal */}
           <ProfileSection people={team.leadership} />
 
-          {/* Coordinators: Warje Primary */}
+          {/* Administrative Coordinators */}
           <ProfileSection
             title={team.coordinators ? "Our Coordinators" : undefined}
             people={team.coordinators}
           />
 
+          {/* Academic Coordinators: Bhilarewadi Secondary */}
+          <ProfileSection
+            title={
+              team.academicCoordinators
+                ? "Academic Coordinators"
+                : undefined
+            }
+            people={team.academicCoordinators}
+          />
           {/* Standard Incharges: Warje Primary */}
           {team.standardIncharges?.length > 0 && (
             <section className="mb-16">

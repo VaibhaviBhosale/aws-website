@@ -22,7 +22,7 @@ const navigation = [
       },
       { label: "Bhilarewadi", href: "/academics/bhilarewadi" },
       { label: "Warje", href: "/academics/warje" },
-      { label: "Manaji Nagar", href: "/academics/manaji-nagar" },
+      { label: "Manaji Nagar", href: "/academics/manajinagar" },
       { label: "Undri", href: "/academics/undri" },
       {
         label: "OUTSTATION",

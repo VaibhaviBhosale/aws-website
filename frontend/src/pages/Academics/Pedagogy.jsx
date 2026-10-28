@@ -111,7 +111,12 @@ function Pedagogy() {
                         {images.map((image) => (
                           <img
                             key={image}
-                            src={`/images/academics/${branchKey}/${sectionKey}/${image}`}
+                            src={`/images/academics/${
+                              ["manajinagar", "undri"].includes(branchKey) &&
+                              sectionKey === "pre-primary"
+                                ? "warje"
+                                : branchKey
+                            }/${sectionKey}/${image}`}
                             alt={item.title}
                             loading="lazy"
                             decoding="async"

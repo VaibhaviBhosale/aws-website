@@ -24,7 +24,9 @@ function AcademicCard({ category, branch, section }) {
 
   // Map Principal's Desk category slugs to the correct route.
   const categorySlug = category.slug.startsWith("principal-")
-    ? "principal-desk"
+  ? "principal-desk"
+  : category.slug === "co-curricular"
+    ? "co-curriculum"
     : category.slug;
 
   const pageUrl = `/academics/${branch}/${section}/${categorySlug}`;

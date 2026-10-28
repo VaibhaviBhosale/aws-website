@@ -15,6 +15,7 @@ import Pedagogy from "./pages/Academics/Pedagogy";
 import Curriculum from "./pages/Academics/Curriculum";
 import Team from "./pages/Academics/Team";
 import PrincipalDesk from "./pages/Academics/PrincipalDesk";
+import CoCurriculum from "./pages/Academics/CoCurriculum";
 
 import "./App.css";
 
@@ -29,14 +30,15 @@ return ( <Router> <div className="app"> <Header />
         <Route path="/leadership" element={<Leadership />} />
 
 <Route path="/academics/bhilarewadi" element={<BranchPage branch={academicsData.bhilarewadi} />} />
-
 <Route path="/academics/warje" element={<BranchPage branch={academicsData.warje} />} />
+<Route path="/academics/manajinagar" element={<BranchPage branch={academicsData.manajinagar} />} />
+<Route path="/academics/undri" element={<BranchPage branch={academicsData.undri} />} />
 
 <Route path="/academics/:branch/:section/pedagogy" element={<Pedagogy />} />
 <Route path="/academics/:branch/:section/curriculum" element={<Curriculum />} />
 <Route path="/academics/:branch/:section/team" element={<Team />} />
 <Route path="/academics/:branch/:section/principal-desk" element={<PrincipalDesk />} />
-
+<Route path="/academics/:branch/:section/co-curriculum" element={<CoCurriculum />} />
 
         <Route path="*" element={<Home />} />
       </Routes>

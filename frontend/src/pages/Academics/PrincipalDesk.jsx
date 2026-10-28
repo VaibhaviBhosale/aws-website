@@ -22,7 +22,14 @@ function PrincipalDesk() {
   const branchKey = branch?.toLowerCase();
   const sectionKey = section?.toLowerCase();
 
-  const pageData = principalDeskData[branchKey]?.[sectionKey];
+  const branchData = principalDeskData[branchKey];
+
+  const pageData =
+    branchKey === "warje" &&
+    (sectionKey === "primary" || sectionKey === "secondary")
+      ? branchData?.principal
+      : branchData?.[sectionKey];
+
   const principal = pageData?.principal;
 
   if (!principal) {
@@ -101,7 +108,9 @@ function PrincipalDesk() {
 
                 <div className="space-y-5 text-justify text-base leading-8 text-gray-600 sm:text-[17px]">
                   {principal.message.map((paragraph, index) => (
-                    <p key={index}>{paragraph}</p>
+                    <p key={index} className="whitespace-pre-line">
+                      {paragraph}
+                    </p>
                   ))}
                 </div>
               </div>
