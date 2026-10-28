@@ -51,7 +51,15 @@ dist-ssr/
 /frontend/.git-backup/
 
 # Old root-level React files (frontend is now in frontend/)
- /eslint.config.js
- 
+/eslint.config.js
+/index.html
+/package-lock.json
+/package.json
+/postcss.config.js
+/public/
+/src/
+/tailwind.config.js
+/vite.config.js
+
 # Background video
 frontend/src/assets/videos/slider.MP4
