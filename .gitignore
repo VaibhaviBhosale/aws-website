@@ -1,1 +1,49 @@
-frontend/node_modules/echo frontend/dist/echo frontend/.envecho frontend/.env.localecho backend/vendor/echo backend/.envecho backend/.env.backupecho backend/.env.productionecho .vscode/echo .idea/
+# React frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.env.local
+frontend/.env.*.local
+
+# Laravel backend
+backend/vendor/
+backend/.env
+backend/.env.backup
+backend/.env.production
+
+# Laravel logs
+backend/storage/logs/*.log
+
+# Laravel generated files
+backend/storage/framework/cache/*
+backend/storage/framework/sessions/*
+backend/storage/framework/views/*
+
+# Node logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependencies and build files
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# Editor and operating system files
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Background video
+frontend/src/assets/videos/slider.MP4
