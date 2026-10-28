@@ -45,5 +45,13 @@ dist-ssr/
 *.sln
 *.sw?
 
+# Git metadata backups
+/frontend-git-backup/
+/frontend-git-original/
+/frontend/.git-backup/
+
+# Old root-level React files (frontend is now in frontend/)
+ /eslint.config.js
+ 
 # Background video
 frontend/src/assets/videos/slider.MP4
