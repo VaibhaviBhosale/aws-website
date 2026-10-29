@@ -1,4 +1,4 @@
-// ============================== COMMON PRE-PRIMARY DATA ==================================
+// ============================== COMMON PRE-PRIMARY DATA WARJE-MANAJINAGAR-UNDRI ==================================
 const sharedPrePrimaryPedagogy = [
     {
         title: "Our Pedagogy – Learning Through Experience",
@@ -48,6 +48,34 @@ const sharedPrePrimaryPedagogy = [
         tagline: "“Bridging Gaps, Building Confidence.”",
         content:
             "We nurture every aspect of a child's growth—academic, social, emotional, physical, and creative. Our goal is to shape confident, compassionate, and lifelong learners who are ready for the future.",
+    },
+];
+
+// Shared Solapur Pedagogy Data
+const solapurPedagogy = [
+    {
+        title: "Pedagogy: Learning Through Experience and Participation",
+        icon: "school",
+        images: ["pedagogy1.png", "pedagogy2.png"],
+        tagline: "",
+        content:
+            "Our pedagogy goes beyond textbooks through experiential, activity-based, learner-centered, and participatory learning. Students actively engage in their learning through hands-on activities, experiments, projects, storytelling, discussions, creative tasks, and outdoor experiences.\n\nThis approach encourages exploration, reflection, creativity, and practical application, helping students develop a deeper understanding of concepts beyond rote learning.",
+    },
+];
+// ============================== SHARED BELAGAVI PEDAGOGY ==============================
+
+const belagaviPedagogy = [
+    {
+        title: "Pedagogy: Learning Through Experience and Participation",
+        icon: "school",
+        image: "sm_pedagogy.jpg",
+        tagline: "",
+        content:
+            "Aaryans Fun School Belagavi is a School which provides structured environment for students to learn and understand. <br>" +
+            "The qualified facitators guide the students, support them to navigate challenges and achieve their goals.<br>" +
+            "Not only students even parents enjoy and understand the teaching learning process through meticulously planned Methodology and different workshops.<br>" +
+            "The well equipped maths,science and computer labs give a first hand experience and develops curiosity in young minds.<br>" +
+            "School library develops reading habit which takes the students towards path of wisdom.",
     },
 ];
 
@@ -611,7 +639,6 @@ const pedagogyData = {
     },
 
     // ============================= UNDRI =============================
-
     undri: {
         // ============================= UNDRI PRE-PRIMARY =============================
         "pre-primary": sharedPrePrimaryPedagogy,
@@ -696,6 +723,20 @@ const pedagogyData = {
             },
         ],
     },
+
+    // ============================= SOLAPUR =============================
+    solapur: {
+        "pre-primary": solapurPedagogy,
+        primary: solapurPedagogy,
+    },
+
+    // ============================= BELAGAVI =============================
+    belagavi: {
+        "pre-primary": belagaviPedagogy,
+        primary: belagaviPedagogy,
+        secondary: belagaviPedagogy,
+    },
+    
 };
 
 export default pedagogyData;

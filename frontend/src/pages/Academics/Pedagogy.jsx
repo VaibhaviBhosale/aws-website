@@ -116,7 +116,12 @@ function Pedagogy() {
                               sectionKey === "pre-primary"
                                 ? "warje"
                                 : branchKey
-                            }/${sectionKey}/${image}`}
+                            }/${
+                              ["belagavi", "solapur"].includes(branchKey) &&
+                              ["primary", "secondary"].includes(sectionKey)
+                                ? "pre-primary"
+                                : sectionKey
+                            }/${image}`}
                             alt={item.title}
                             loading="lazy"
                             decoding="async"

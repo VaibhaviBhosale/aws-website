@@ -34,6 +34,9 @@ return ( <Router> <div className="app"> <Header />
 <Route path="/academics/manajinagar" element={<BranchPage branch={academicsData.manajinagar} />} />
 <Route path="/academics/undri" element={<BranchPage branch={academicsData.undri} />} />
 
+<Route path="/academics/solapur" element={<BranchPage branch={academicsData.solapur} />} />
+<Route path="/academics/belagavi" element={<BranchPage branch={academicsData.belagavi} />} />
+
 <Route path="/academics/:branch/:section/pedagogy" element={<Pedagogy />} />
 <Route path="/academics/:branch/:section/curriculum" element={<Curriculum />} />
 <Route path="/academics/:branch/:section/team" element={<Team />} />

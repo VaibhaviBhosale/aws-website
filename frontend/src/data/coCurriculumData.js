@@ -1,7 +1,7 @@
 const coCurriculumData = {
   // ======================================== WARJE ========================================
   warje: {
-  // ======================================== WARJE PRIMARY ========================================
+    // ======================================== WARJE PRIMARY ========================================
     primary: [
       {
         title: "Welcoming Activities",
@@ -107,7 +107,7 @@ const coCurriculumData = {
       },
     ],
 
-  // ======================================== WARJE SECONDARY ========================================
+    // ======================================== WARJE SECONDARY ========================================
     secondary: [
       {
         title: "Sports",
@@ -199,6 +199,139 @@ const coCurriculumData = {
       },
     ],
   },
-};
+  
+  // ============================= UNDRI =============================
+  undri: {
+    // ============================= UNDRI PRIMARY =============================
+    primary: [
+      {
+        title: "Co-Curricular Activities at Aaryans World School",
+        icon: "star",
+        tagline: "",
+        content:
+          "At Aaryans World School, Undri, we believe that learning goes far beyond textbooks. Co-curricular activities are an integral part of our curriculum. They help students discover their talents, build confidence, and develop life skills.",
+      },
+      {
+        title: "1. SPORTS & FITNESS",
+        icon: "futbol",
+        images: ["sports1.jpg", "sports3.jpg"],
+        tagline:
+          "Building Fitness, Character and Team Spirit through Every Activity.",
+        content:
+          "A healthy mind lives in a healthy body.<br>" +
+          "- Outdoor: Cricket, Football, Basketball, Athletics, Skating<br>" +
+          "- Indoor: Chess, Carrom, Table Tennis, Yoga<br>" +
+          "Weekly sports periods, inter-house tournaments, and professional coaching ensure every child stays active and learns teamwork, discipline, and sportsmanship.",
+      },
+      {
+        title: "2. PERFORMING ARTS",
+        icon: "music",
+        images: ["music1.jpeg", "music2.jpeg", "art1.jpeg"],
+        tagline: "Talent meets opportunity, and spirits soar high!",
+        content:
+          "Stage is where confidence is born.<br>" +
+          "- Music: Vocal and Instrumental - Indian Classical, Western, Keyboard, Guitar<br>" +
+          "- Dance: Classical, Contemporary, Folk<br>" +
+          "- Drama & Theatre: Annual Day, Elocution, Role Plays, Debates<br>" +
+          "Students perform at school events and inter-school competitions to express creativity.",
+      },
+      {
+        title: "3. VISUAL ARTS & CREATIVITY",
+        icon: "palette",
+        images: ["art2.jpeg", "art3.jpg", "art4.jpeg"],
+        tagline: "",
+        content:
+          "Art is how we see the world.<br>" +
+          "- Drawing, Painting, Pottery, Craft, Origami<br>" +
+          "- Digital Art & Design Thinking Workshops<br>" +
+          "Exhibitions and Art Gallery Days showcase student talent.",
+      },
+      {
+        title: "4. CLUBS & LEADERSHIP",
+        icon: "book-open",
+        images: ["leadership1.jpg", "leadership2.jpg"],
+        tagline: "",
+        content:
+          "- STEM Club: Robotics, Coding, Science Experiments<br>" +
+          "- Eco Club: Gardening, Recycling, Awareness Drives<br>" +
+          "- Literary Club: Book Reviews, Story Writing, Quiz<br>" +
+          "- Heritage & Culture Club: Indian Festivals, Language Activities<br>" +
+          "- Social Service Club: Club participation builds leadership, problem-solving, and social responsibility.",
+      },
+      {
+        title: "5. EVENTS & EXPOSURES",
+        icon: "lightbulb",
+        images: ["event1.jpeg", "event2.jpg"],
+        tagline: "",
+        content:
+          "Learning through experiences.<br>" +
+          "- Annual Day, Sports Day, Science Exhibition, Art Fest<br>" +
+          "- Educational Field Trips, Heritage Walks, Industry Visits<br>" +
+          "- Celebrations: Independence Day, Teachers Day, Diwali, Christmas<br>" +
+          "- Competitions: Olympiads, Spell Bee, Inter-School Fests",
+      },
+    ],
+  },
 
+  // ============================= SOLAPUR =============================
+  solapur: {
+    // ============================= SOLAPUR PRIMARY =============================
+    primary: [
+      {
+        title: "Annual Social Gathering (ASG)",
+        icon: "calendar-days",
+        images: ["asg1.png", "asg2.png", "asg3.png"],
+        content:
+          "The Annual Social Gathering is a joyful and memorable school event that gives students a platform to showcase their talent, creativity, confidence, and teamwork. It brings together students, teachers, parents, and guests in a celebration of the school community.<br><br>The event helps students overcome stage fear and develop communication, presentation, and leadership skills. While preparing and participating, students learn values such as cooperation, discipline, responsibility, punctuality, and respect.<br><br>Overall, the Annual Social Gathering promotes all-round development, creativity, confidence, and unity, while creating lasting memories for students.",
+      },
+      {
+        title: "Physical Education and Sports Development Programme",
+        icon: "futbol",
+        images: ["sport1.png", "sport2.png", "sport3.png", "sport4.png"],
+        tagline:
+          "Building Fitness, Character and Team Spirit through Every Activity.",
+        content:
+          "The school places strong emphasis on physical education and sports as an important part of holistic development. Regular physical activities and structured sports programmes help students develop fitness, coordination, agility, flexibility, balance, and overall well-being.<br><br>Through age-appropriate and enjoyable activities, students build physical confidence, body awareness, teamwork, and a positive attitude towards an active and healthy lifestyle. A healthy body and an alert mind contribute to the overall growth of every learner.",
+      },
+      {
+        title: "Events: Creating Memorable Learning Experiences",
+        icon: "music",
+        images: [
+          "event1.png",
+          "event2.png",
+          "event3.png",
+          "event4.png",
+        ],
+        tagline: "Talent meets opportunity, and spirits soar high!",
+        content:
+          "School events provide students with opportunities to learn, participate, perform, and celebrate together while supporting their overall development. Throughout the academic year, students take part in academic, cultural, sports, creative, and awareness-based events, including festivals, special days, competitions, exhibitions, assemblies, and co-curricular programmes.<br><br>These experiences help students showcase their talents, build confidence, develop creativity, and actively participate in the school community.",
+      },
+      {
+        title: "SPARK (Teachers Empowerment Programme)",
+        icon: "book-open",
+        images: ["spark1.png", "spark2.png"],
+        content:
+          "The SPARK (Teachers Empowerment Programme) focuses on continuous professional development and excellence in teaching. The school regularly organizes training programmes to strengthen teachers’ professional skills, pedagogical knowledge, classroom practices, and teaching effectiveness.<br><br>Sessions are conducted by experienced trainers and experts through workshops, demonstrations, case studies, group discussions, collaborative activities, and hands-on learning. Teachers are encouraged to share experiences, reflect on their practices, and adopt innovative strategies in the classroom.<br><br>The programme promotes a culture of continuous learning, reflection, and improvement, empowering teachers to better address students’ diverse learning needs and support their overall academic and personal growth.",
+      },
+      {
+        title: "Class Assembly",
+        icon: "microphone",
+        images: [
+          "assembly1.png",
+          "assembly2.png",
+          "assembly3.png",
+        ],
+        content:
+          "School assemblies provide students with a meaningful platform to learn, express themselves, and build confidence. Special assemblies are organized around educational, social, cultural, and value-based themes such as kindness, discipline, environmental awareness, patriotism, health, teamwork, leadership, and responsible citizenship.<br><br>Through speeches, skits, role plays, music, dance, poetry, and creative performances, students actively participate in planning and presenting programmes. These experiences make learning engaging while developing communication, creativity, teamwork, leadership, stage confidence, and time-management skills.",
+      },
+      {
+        title: "Competition (Achievements)",
+        icon: "trophy",
+        image: "compitition1.png",
+        content:
+          "Our school takes pride in the outstanding achievements of students in various Olympiad examinations. These competitions provide opportunities to strengthen knowledge, logical thinking, problem-solving skills, and competitive spirit beyond the regular curriculum.<br><br>Students are supported through practice sessions, worksheets, mock tests, and academic guidance. Participation encourages them to apply their knowledge to challenging problems while building confidence, analytical skills, and a healthy competitive attitude.",
+      },
+    ],
+  },
+};
 export default coCurriculumData;

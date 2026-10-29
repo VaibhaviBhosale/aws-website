@@ -79,10 +79,17 @@ export default function CoCurriculum() {
                             className="overflow-hidden rounded-xl border-4 border-amber-200 bg-white p-1 shadow-lg"
                           >
                             <img
-                              src={`/images/academics/${branchKey}/${sectionKey}/cocurriculum/${image}`}
+                              src={`/images/academics/${
+                                branchKey === "solapur" && sectionKey === "primary"
+                                  ? "solapur/primary"
+                                  : `${branchKey}/${sectionKey}`
+                              }/cocurriculum/${image}`}
                               alt={`${item.title} - ${image}`}
                               loading="lazy"
-                              className="h-32 w-full object-cover transition duration-300 hover:scale-105 sm:h-40 lg:h-44"
+                              onError={(e) => {
+                                console.error("Image not found:", e.currentTarget.src);
+                              }}
+                              className="h-32 w-full rounded-lg object-cover transition duration-300 hover:scale-105 sm:h-40 lg:h-44"
                             />
                           </div>
                         ))}

@@ -36,7 +36,11 @@ function Team() {
   const imageFolder =
     branchKey === "bhilarewadi"
       ? "/images/team/bw"
-      : "/images/team/warje";
+      : branchKey === "solapur"
+        ? "/images/team/sp"
+        : branchKey === "belagavi"
+          ? "/images/team/belagavi"
+          : "/images/team/warje";
 
   const getImagePath = (image) => `${imageFolder}/${image}`;
 

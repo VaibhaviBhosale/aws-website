@@ -276,14 +276,172 @@ const academicsData = {
                         description: "Activities & development",
                     },
                     {
+                        name: "Principal's Desk",
+                        slug: "principal-primary",
+                        description: "Message from the Principal",
+                    },
+                ],
+            },
+        ],
+    },
+
+    // ======================== SOLAPUR ===========================
+    solapur: {
+        slug: "solapur",
+        name: "Solapur",
+        subtitle: "Explore our academic programmes and learning journey.",
+
+        sections: [
+            {
+                // ======================== SOLAPUR PRE-PRIMARY ===========================
+                id: "pre-primary",
+                name: "Pre-Primary",
+                categories: [
+                    {
+                        name: "Pedagogy",
+                        slug: "pedagogy",
+                        description: "Learning approach",
+                    },
+                    {
+                        name: "Curriculum",
+                        slug: "curriculum",
+                        description: "Learning programme",
+                    },
+                    {
+                        name: "Principal's Desk",
+                        slug: "principal-desk",
+                        description: "Message from the Principal",
+                    },
+                    {
                         name: "Team",
                         slug: "team",
                         description: "Meet our educators",
+                    },
+                ],
+            },
+
+            {
+                // ======================== SOLAPUR PRIMARY ===========================
+                id: "primary",
+                name: "Primary",
+                categories: [
+                    {
+                        name: "Pedagogy",
+                        slug: "pedagogy",
+                        description: "Learning approach",
+                    },
+                    {
+                        name: "Curriculum",
+                        slug: "curriculum",
+                        description: "Learning programme",
+                    },
+                    {
+                        name: "Co-Curricular",
+                        slug: "co-curriculum",
+                        description: "Beyond academics",
+                    },
+                    {
+                        name: "Principal's Desk",
+                        slug: "principal-desk",
+                        description: "Message from the Principal",
+                    },
+                    {
+                        name: "Team",
+                        slug: "team",
+                        description: "Meet our educators",
+                    },
+                ],
+            },
+        ],
+    },
+
+    // ======================== BELAGAVI ===========================
+    belagavi: {
+        slug: "belagavi",
+        name: "Belagavi",
+        subtitle: "Explore our academic programmes and learning journey.",
+
+        sections: [
+            {
+                // ======================== BELAGAVI PRE-PRIMARY ===========================
+                id: "pre-primary",
+                name: "Pre-Primary",
+                categories: [
+                    {
+                        name: "Pedagogy",
+                        slug: "pedagogy",
+                        description: "Learning approach",
+                    },
+                    {
+                        name: "Curriculum",
+                        slug: "curriculum",
+                        description: "Learning programme",
+                    },
+                    {
+                        name: "Principal's Desk",
+                        slug: "principal-preprimary",
+                        description: "Message from the Principal",
+                    },
+                    {
+                        name: "Team",
+                        slug: "team",
+                        description: "Meet our educators",
+                    },
+                ],
+            },
+
+            {
+                // ======================== BELAGAVI PRIMARY ===========================
+                id: "primary",
+                name: "Primary",
+                categories: [
+                    {
+                        name: "Pedagogy",
+                        slug: "pedagogy",
+                        description: "Learning approach",
+                    },
+                    {
+                        name: "Curriculum",
+                        slug: "curriculum",
+                        description: "Learning programme",
                     },
                     {
                         name: "Principal's Desk",
                         slug: "principal-primary",
                         description: "Message from the Principal",
+                    },
+                    {
+                        name: "Team",
+                        slug: "team",
+                        description: "Meet our educators",
+                    },
+                ],
+            },
+
+            {
+                // ======================== BELAGAVI SECONDARY ===========================
+                id: "secondary",
+                name: "Secondary",
+                categories: [
+                    {
+                        name: "Pedagogy",
+                        slug: "pedagogy",
+                        description: "Learning approach",
+                    },
+                    {
+                        name: "Curriculum",
+                        slug: "curriculum",
+                        description: "Learning programme",
+                    },
+                    {
+                        name: "Principal's Desk",
+                        slug: "principal-secondary",
+                        description: "Message from the Principal",
+                    },
+                    {
+                        name: "Team",
+                        slug: "team",
+                        description: "Meet our educators",
                     },
                 ],
             },

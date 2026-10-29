@@ -1,7 +1,7 @@
 const teamData = {
   // ================================ WARJE =====================================
   warje: {
-  // ================================ WARJE PRE-PRIMARY =====================================
+    // ================================ WARJE PRE-PRIMARY =====================================
     "pre-primary": {
       title: "Our Pre-Primary Team",
       subtitle:
@@ -33,7 +33,7 @@ const teamData = {
           "Our Pre-Primary Teaching Team is a passionate group of educators committed to creating a joyful, engaging, and inspiring learning environment. Through innovative teaching practices, personalized attention, and continuous encouragement, they nurture curiosity, confidence, creativity, and strong values in every child, helping each learner achieve academic excellence and holistic development.",
       },
     },
-  // ================================ WARJE PRIMARY =====================================
+    // ================================ WARJE PRIMARY =====================================
     primary: {
       title: "Our Primary Team",
       subtitle:
@@ -94,7 +94,7 @@ const teamData = {
           "Our Primary Teaching Team is a passionate group of educators committed to creating a joyful, engaging, and inspiring learning environment. Through innovative teaching practices, personalized attention, and continuous encouragement, they nurture curiosity, confidence, creativity, and strong values in every child, helping each learner achieve academic excellence and holistic development.",
       },
     },
-  // ================================ WARJE SECONDARY =====================================
+    // ================================ WARJE SECONDARY =====================================
     secondary: {
       title: "Our Secondary Team",
       subtitle:
@@ -175,7 +175,7 @@ const teamData = {
       },
     },
 
-    // ================================ BHILAREWADI PRIMARY =====================================
+    // ================================ BHILAREWADI SECONDARY =====================================
     secondary: {
       title: "Our Secondary Team",
       subtitle:
@@ -255,10 +255,11 @@ const teamData = {
   },
 };
 
-
+// ================================ MANAJINAGAR =====================================
 // Manaji Nagar reuses Warje Pre-Primary data,
 // with its own group team photo.
 teamData.manajinagar = {
+  // ================================ MANAJINAGAR PRE-PRIMARY =====================================
   "pre-primary": {
     ...teamData.warje["pre-primary"],
     groupTeam: {
@@ -268,7 +269,7 @@ teamData.manajinagar = {
     },
   },
 
-  // Manaji Nagar Primary Team
+  // ================================ MANAJINAGAR PRIMARY =====================================
   primary: {
     title: "Our Primary Team",
     subtitle:
@@ -280,6 +281,89 @@ teamData.manajinagar = {
       title: "Our Primary Teaching Team",
       description:
         "Our Primary Teaching Team is a passionate group of educators committed to creating a joyful, engaging, and inspiring learning environment. Through innovative teaching practices, personalized attention, and continuous encouragement, they nurture curiosity, confidence, creativity, and strong values in every child, helping each learner achieve academic excellence and holistic development.",
+    },
+  },
+};
+
+
+// ================================ SOLAPUR =====================================
+
+teamData.solapur = {
+  // ================================ SOLAPUR PRE-PRIMARY =====================================
+  "pre-primary": {
+    title: "Our Pre Primary Team",
+    subtitle:
+      "Meet the passionate educators and leaders who guide, inspire and nurture every child at Aaryans World School.",
+
+    groupTeam: {
+      image: "sp_team.jpeg",
+      imageAlt: "Solapur Pre Primary Teaching Team",
+      title: "Dedicated Pre Primary Educators",
+      description:
+        "Our Pre Primary Teaching Team is a passionate group of educators committed to creating a joyful, engaging, and inspiring learning environment. Through innovative teaching practices, personalized attention, and continuous encouragement, they nurture curiosity, confidence, creativity, and strong values in every child, helping each learner achieve academic excellence and holistic development.",
+    },
+  },
+
+  // ================================ SOLAPUR PRIMARY =====================================
+  primary: {
+    title: "Our Primary Team",
+    subtitle:
+      "Meet the passionate educators and leaders who guide, inspire and nurture every child at Aaryans World School.",
+
+    groupTeam: {
+      image: "sp_team.jpeg",
+      imageAlt: "Primary Teaching Team",
+      title: "Dedicated Primary Educators",
+      description:
+        "Our school team is a dedicated and committed group of educators and staff who work together with a shared vision of providing quality education and a positive learning environment. Teachers, coordinators, administrative staff, and support staff contribute with sincerity, responsibility, and enthusiasm towards the overall development of students.\n\nTeachers focus on academic excellence while nurturing creativity, confidence, discipline, values, and life skills. Through teamwork, regular planning, collaboration, and sharing of ideas, the team successfully organizes academic activities, events, competitions, and celebrations.\n\nThe team believes in continuous learning and professional growth through innovative teaching methods, activity-based learning, and collaborative practices. Together, they create a supportive environment where students are encouraged to learn, explore, and achieve their potential.",
+    },
+  },
+};
+
+// ================================ BELAGAVI =====================================
+teamData.belagavi = {
+  // ================================ BELAGAVI PRE-PRIMARY =====================================
+  "pre-primary": {
+    title: "Our Pre Primary Team",
+    subtitle:
+      "Meet the passionate educators and leaders who guide, inspire and nurture every child at Aaryans World School.",
+
+    groupTeam: {
+      image: "pp_team.jpeg",
+      imageAlt: "Primary Teaching Team",
+      title: "Dedicated Pre Primary Educators",
+      description:
+        "Our Pre Primary Teaching Team is a passionate group of educators committed to creating a joyful, engaging, and inspiring learning environment. Through innovative teaching practices, personalized attention, and continuous encouragement, they nurture curiosity, confidence, creativity, and strong values in every child, helping each learner achieve academic excellence and holistic development.",
+    },
+  },
+
+  // ================================ BELAGAVI PRIMARY =====================================
+  "primary": {
+    title: "Our Primary Team",
+    subtitle:
+      "Meet the passionate educators and leaders who guide, inspire and nurture every child at Aaryans World School.",
+
+    groupTeam: {
+      image: "ps_team.jpeg",
+      imageAlt: "Primary Teaching Team",
+      title: "Dedicated Primary Educators",
+      description:
+        "Our Primary Teaching Team is a passionate group of educators committed to creating a joyful, engaging, and inspiring learning environment. Through innovative teaching practices, personalized attention, and continuous encouragement, they nurture curiosity, confidence, creativity, and strong values in every child, helping each learner achieve academic excellence and holistic development.",
+    },
+  },
+
+  // ================================ BELAGAVI SECONDARY =====================================
+  "secondary": {
+    title: "Our Secondary Team",
+    subtitle:
+      "Meet the passionate educators and leaders who guide, inspire and nurture every child at Aaryans World School.",
+
+    groupTeam: {
+      image: "ps_team.jpeg",
+      imageAlt: "Secondary Teaching Team",
+      title: "Dedicated Secondary Educators",
+      description:
+        "Our Secondary Teaching Team is a passionate group of educators committed to creating a joyful, engaging, and inspiring learning environment. Through innovative teaching practices, personalized attention, and continuous encouragement, they nurture curiosity, confidence, creativity, and strong values in every child, helping each learner achieve academic excellence and holistic development.",
     },
   },
 };

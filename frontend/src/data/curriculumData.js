@@ -1,3 +1,4 @@
+//====================================== COMMON DATA FOR PRE-PREIMARY WARJE-MANAJINAGAR-UNDRI =========================================
 const sharedPrePrimaryCurriculum = [
   {
     title: "Curriculum (Nursery to UKG)",
@@ -293,23 +294,218 @@ const curriculumData = {
 
   //--------------------------------------------- MANAJI NAGAR ------------------------------------------------------
   manajinagar: {
-      "pre-primary": sharedPrePrimaryCurriculum,
-
-      primary: [
-          {
-              title: "Curriculum",
-              content:
-                  "The primary section -curriculum focuses on building strong foundational skills in language, mathematics, environmental studies, and life skills. It encourages conceptual understanding, curiosity, creativity, and good learning habits through activity-based and experiential learning. Emphasis is given to values, communication skills, critical thinking, and overall personality development, preparing students for higher grades.",
-          },
-      ],
-  },
-
-  //--------------------------------------------- UNDRI ------------------------------------------------------
-  undri: {
-    // Reuse Warje Pre-Primary curriculum content
+    //--------------------------------------------- MANAJI NAGAR PRE-PRIMARY  ------------------------------------------------------
     "pre-primary": sharedPrePrimaryCurriculum,
+
+    //--------------------------------------------- MANAJI NAGAR PRIMARY  ------------------------------------------------------
+    primary: [
+      {
+        title: "Curriculum",
+        content:
+          "The primary section -curriculum focuses on building strong foundational skills in language, mathematics, environmental studies, and life skills. It encourages conceptual understanding, curiosity, creativity, and good learning habits through activity-based and experiential learning. Emphasis is given to values, communication skills, critical thinking, and overall personality development, preparing students for higher grades.",
+      },
+    ],
   },
 
+  // ============================= UNDRI =============================
+
+  undri: {
+    // ============================= UNDRI PRE-PRIMARY =============================
+    "pre-primary": sharedPrePrimaryCurriculum,
+
+    // ============================= UNDRI PRIMARY =============================
+    primary: [
+      {
+        title: "Curriculum",
+        icon: "book",
+        tagline: "",
+        content:
+          "At Aaryans World School, we follow the CBSE curriculum aligned with the National Education Policy 2020. Our goal is to move beyond rote learning and build students who are curious, creative, and career-ready.",
+      },
+      {
+        title: "Foundational to Senior Stage Learning",
+        icon: "puzzle",
+        images: ["skill4.jpg", "skill3.jpg"],
+        tagline: "",
+        content:
+          "We follow the 5+3+3+4 structure. From play-based learning in early years to subject specialization in senior classes, each stage builds strong concepts.",
+      },
+      {
+        title: "Academic Excellence with Conceptual Clarity",
+        icon: "lightbulb",
+        images: ["skill1.jpg", "skill2.jpg"],
+        tagline: "",
+        content:
+          "Core subjects—English, Mathematics, Science, Social Science, and Languages—are taught with emphasis on understanding, application, and problem-solving.",
+      },
+      {
+        title: "21st Century Skills",
+        icon: "school",
+        images: ["undri1.jpg", "undri2.jpg", "undri3.jpg", "undri4.jpg"],
+        tagline: "Rain cannot stop the will to move forward.",
+        content:
+          "Critical Thinking, Collaboration, Communication, Creativity, and Digital Literacy are integrated into every subject.",
+      },
+      {
+        title: "Skill & Vocational Education",
+        icon: "flask",
+        images: ["undri5.jpg", "undri6.jpg"],
+        tagline: "",
+        content:
+          "From Grade 6 onwards, students choose skill subjects like AI, Coding, Financial Literacy, Design Thinking, and Entrepreneurship as per NEP guidelines.",
+      },
+      {
+        title: "Holistic Development",
+        icon: "graduation-cap",
+        images: ["holistic1.jpg", "holistic2.jpg", "holistic3.jpg"],
+        tagline: "",
+        content:
+          "Sports, Performing Arts, Visual Arts, and Clubs are not extra-curricular. They are part of the curriculum to build confidence and leadership.",
+      },
+      {
+        title: "Technology Integration",
+        icon: "graduation-cap",
+        images: ["tech1.jpg", "tech2.jpg"],
+        tagline: "",
+        content:
+          "Smart classrooms, coding from Grade 1, and STEM Lab ensure our students are future-ready.",
+      },
+      {
+        title: "Assessment",
+        icon: "graduation-cap",
+        images: ["assessment1.jpg", "assessment2.jpg"],
+        tagline: "",
+        content:
+          "We use Continuous and Comprehensive Evaluation with projects, presentations, and competency-based questions instead of only exams.",
+      },
+    ],
+  },
+
+  // ============================= SOLAPUR =============================
+  solapur: {
+    // ============================= SOLAPUR PRE-PRIMARY =============================
+    "pre-primary": [
+      {
+        title: "Curriculum",
+        content:
+          "Our curriculum provides a balanced and engaging learning experience that focuses on both academic knowledge and the overall development of every child. Through practical activities, projects, and real-life experiences, students develop creativity, critical thinking, communication, collaboration, and problem-solving skills while exploring their interests and building confidence.",
+      },
+      {
+        title: "Events: Creating Memorable Learning Experiences",
+        content:
+          "School events are an integral part of our educational journey, providing students with opportunities to learn, participate, perform, and celebrate together. At our school, events are thoughtfully planned to complement classroom learning and encourage the holistic development of every child.<br><br>Throughout the academic year, students actively participate in a variety of academic, cultural, sports, creative, and awareness-based events. Celebrations such as national and cultural festivals, special days, competitions, exhibitions, assemblies, sports activities, and co-curricular programmes provide children with meaningful opportunities to showcase their talents and abilities.",
+      },
+    ],
+
+    // ============================= SOLAPUR PRIMARY =============================
+    primary: [
+      {
+        title: "Curriculum",
+        content:
+          "Our school curriculum is thoughtfully designed to provide students with a balanced, engaging, and holistic learning experience. It goes beyond academic knowledge by focusing on the overall development of every child. The curriculum integrates age-appropriate concepts with practical experiences, activities, projects, and real-life applications, making learning meaningful and enjoyable.<br><br>Our curriculum encourages students to learn, explore, question, analyse, create, and apply their knowledge in different situations. Subjects are planned systematically to develop strong foundational skills while gradually building higher-order thinking, problem-solving, creativity, communication, and collaboration skills.<br><br>Along with core academic subjects, students are given opportunities to participate in co-curricular activities, sports, art and craft, music, dance, competitions, celebrations, environmental activities, experiments, and experiential learning programmes. These experiences help children discover their interests, develop confidence, and express themselves creatively.",
+      },
+      {
+        title: "Activity-Based Learning (ABL)",
+        images: ["abl1.png", "abl2.png", "abl3.png", "abl4.jpeg"],
+        content:
+          "Activity-Based Learning (ABL) is a learner-centered approach that promotes meaningful, experiential, and engaging learning through the principle of “learning by doing.” Students actively participate in the learning process through experiments, hands-on activities, educational games, role plays, projects, arts and crafts, and real-life experiences.<br><br>ABL helps students connect theory with practical situations while encouraging them to explore, observe, question, analyze, and solve problems independently. It also develops essential skills such as creativity, critical thinking, communication, collaboration, decision-making, and problem-solving.",
+      },
+      {
+        title: "Total Eradication of Mathematics Phobia (TEMP)",
+        image: "temp1.jpeg",
+        content:
+          "The Total Eradication of Mathematics Phobia Programme aims to build confidence and a positive attitude towards Mathematics by addressing students’ fear, anxiety, and learning difficulties. Through remedial support, guided practice, reinforcement activities, personalized attention, and constructive feedback, students are encouraged to view mistakes as opportunities to learn.<br><br>The programme nurtures confident, resilient, and capable mathematical learners who approach Mathematics with curiosity and enthusiasm.",
+      },
+      {
+        title: "Language Development Programme (LDP)",
+        images: ["ldp1.png", "ldp2.png", "ldp3.png", "ldp4.png"],
+        content:
+          "The Language Development Programme strengthens students’ skills in listening, speaking, reading, writing, vocabulary, and pronunciation while building confidence in communication.<br><br>Through storytelling, picture talk, role play, conversations, reading activities, word games, rhymes, discussions, and creative expression, students learn to communicate clearly, express ideas confidently, and use language effectively in academic and real-life situations.",
+      },
+      {
+        title: "Class Corner",
+        images: ["corner1.png", "corner2.png"],
+        content:
+          "The Class Corner is a vibrant and interactive learning space that reflects students’ learning, creativity, achievements, and participation. It provides a platform where students can proudly display their work and share ideas with their classmates.<br><br>It features drawings, paintings, worksheets, subject-related projects, creative writing, craft work, new words, interesting facts, and learning activities. The displays are regularly updated according to classroom topics, making learning more meaningful and visually engaging.",
+      },
+    ],
+  },
+
+  // ============================= BELAGAVI =============================
+  belagavi: {
+
+    // ============================= BELAGAVI PRE-PRIMARY =============================
+    "pre-primary": [
+      {
+        title: "Colour days",
+        images: ["color1.jpeg", "color2.jpeg"],
+        content:
+          "Aaryans celebrate colourdays to help the littleones to recognize & identify shades. Including dress code we allownkids to bring the respective colour toy or any object & the child speaks about the same.We emphasize on Language Development Activity, Parents are requested to send the food related to that colour.even multiple activities are scheduled for same ,like blending of the colours churning, messy play, Clay molding etc.",
+      },
+      {
+        title: "Assembly",
+        images: ["assembly1.jpeg", "assembly2.jpeg"],
+        content:
+          "Aaryans Assembly Topics are helpful for the child to understand the difficult concept.We schedule is through the Dramatization, Enactment, Story, quiz,riddles. It helps for smooth functioning of the child's routine.",
+      },
+      {
+        title: "Fieldtrip",
+        images: ["temp1.jpeg", "temp2.jpeg"],
+        content:
+          "Aaryans field trips give hands-on, real-world experiences that turn abstract classroom lessons into tangible memories. They stimulate young senses, develops social behavior. Develops Interaction, conversation skills properly.",
+      },
+      {
+        title: "Activity Based Learning (ABL)",
+        images: ["abl1.jpeg", "abl2.jpeg"],
+        content:
+          "Activity Based Learning is the speciality of Aaryans.All the concepts,academic content, themes are taught through the activities ,project method. Academic activities are conducted in joyful atmosphere.",
+      },
+      {
+        title: "My Impression Day (MID)",
+        images: ["mid1.jpeg", "mid2.jpeg", "mid3.jpeg", "mid4.jpeg"],
+        content:
+          "Unique way of evaluating kids children. There is transperancy between school & parents, evaluation is done by the parents, kids will be performing exams in front of parents. Exhibition is held on this day. Kids demonstrate all the content of the Exhibition.",
+      },
+    ],
+
+    // ============================= BELAGAVI PRIMARY =============================
+    primary: [
+      {
+        title: "Language Development Programme (LDP)",
+        images: ["ldp1.jpeg", "ldp2.jpeg", "ldp3.jpeg", "ldp4.jpeg"],
+        content:
+          "The Language Development Programme (LDP) strengthens students' Listening, Speaking, Reading, and Writing (LSRW) skills in English, Hindi, and Marathi. Through engaging activities, students enhance vocabulary, grammar, communication, creativity, and overall language proficiency.",
+      },
+      {
+        title: "Total Eradication of Mathematics Phobia (TEMP)",
+        images: ["temp1.jpeg", "temp2.jpeg"],
+        content:
+          "TEMP is a unique initiative that helps students overcome the fear of Mathematics through joyful, hands-on, and activity-based learning. By making Maths engaging and meaningful, the programme builds conceptual understanding, confidence, and a positive attitude towards the subject.",
+      },
+      {
+        title: "Fieldtrip",
+        images: ["fieldtrip1.jpeg", "fieldtrip2.jpeg"],
+        content:
+          "Is s journey by a group of associated peers to a place away from their normal environmentnfor the purpose of Education. Our students learn different concepts through field trips.",
+      },
+    ],
+
+    // ============================= BELAGAVI SECONDARY =============================
+    secondary: [
+      {
+        title: "Language Development Programme (LDP)",
+        images: ["ldp1.jpeg", "ldp2.jpeg", "ldp3.jpeg", "ldp4.jpeg"],
+        content:
+          "The Language Development Programme (LDP) strengthens students' Listening, Speaking, Reading, and Writing (LSRW) skills in English, Hindi, and Marathi. Through engaging activities, students enhance vocabulary, grammar, communication, creativity, and overall language proficiency.",
+      },
+      {
+        title: "Total Eradication of Mathematics Phobia (TEMP)",
+        images: ["temp1.jpeg", "temp2.jpeg"],
+        content:
+          "TEMP is a unique initiative that helps students overcome the fear of Mathematics through joyful, hands-on, and activity-based learning. By making Maths engaging and meaningful, the programme builds conceptual understanding, confidence, and a positive attitude towards the subject.",
+      },
+    ],
+  },
 };
 
 export default curriculumData;
