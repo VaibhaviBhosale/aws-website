@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import api from "../services/api";
 import "../styles/Home.css";
 import heroVideo from "../assets/videos/slider.MP4";
 import schoolLogo from "../assets/images/logo_aws.png";
@@ -297,13 +298,62 @@ function QuickEnquiry() {
     }));
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
-    setStatusMessage(
-      "Your enquiry form is ready. Backend submission will be connected later."
-    );
-  };
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    const payload = {
+        student_name: formData.get("studentName"),
+        dob: formData.get("dob"),
+        gender: formData.get("gender"),
+        class_applying_for: formData.get("className"),
+        admission_year: formData.get("admissionYear"),
+
+        father_name: formData.get("fatherName"),
+        father_qualification: formData.get("fatherQualification"),
+        father_mobile: formData.get("fatherMobile"),
+        father_whatsapp: formData.get("fatherWhatsapp"),
+        father_email: formData.get("fatherEmail"),
+
+        mother_qualification: formData.get("motherQualification"),
+        mother_mobile: formData.get("motherMobile"),
+        mother_email: formData.get("motherEmail"),
+        mother_whatsapp: formData.get("motherWhatsapp"),
+
+        address: formData.get("address"),
+        pin: formData.get("pin"),
+
+        previous_school: formData.get("previousSchool"),
+        previous_standard: formData.get("previousStandard"),
+        leaving_reason: formData.get("leavingReason"),
+    };
+
+    try {
+        setStatusMessage("Submitting enquiry...");
+
+        const response = await api.post("/enquiries", payload);
+
+        setStatusMessage(response.data.message);
+
+        form.reset();
+
+    } catch (error) {
+        console.error("Enquiry submission error:", error);
+
+        if (error.response?.status === 422) {
+            const errors = error.response.data.errors;
+            const firstError = Object.values(errors)[0][0];
+
+            setStatusMessage(firstError);
+        } else {
+            setStatusMessage(
+                "Unable to submit enquiry. Please try again."
+            );
+        }
+    }
+};
 
   const classes = [
     "Nursery",
