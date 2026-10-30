@@ -72,24 +72,29 @@ export default function CoCurriculum() {
                       className={`lg:col-span-5 ${index % 2 === 1 ? "lg:order-2" : ""
                         }`}
                     >
-                      <div className="grid grid-cols-2 gap-3">
+                      <div
+                        className={`grid gap-3 ${images.length === 1 ? "grid-cols-1" : "grid-cols-2"
+                          }`}
+                      >
                         {images.map((image) => (
                           <div
                             key={image}
                             className="overflow-hidden rounded-xl border-4 border-amber-200 bg-white p-1 shadow-lg"
                           >
                             <img
-                              src={`/images/academics/${
-                                branchKey === "solapur" && sectionKey === "primary"
+                              src={`/images/academics/${branchKey === "solapur" && sectionKey === "primary"
                                   ? "solapur/primary"
                                   : `${branchKey}/${sectionKey}`
-                              }/cocurriculum/${image}`}
+                                }/cocurriculum/${image}`}
                               alt={`${item.title} - ${image}`}
                               loading="lazy"
                               onError={(e) => {
                                 console.error("Image not found:", e.currentTarget.src);
                               }}
-                              className="h-32 w-full rounded-lg object-cover transition duration-300 hover:scale-105 sm:h-40 lg:h-44"
+                              className={`w-full rounded-lg object-cover transition duration-300 hover:scale-105 ${images.length === 1
+                                  ? "h-[260px] sm:h-[360px]"
+                                  : "h-32 sm:h-40 lg:h-44"
+                                }`}
                             />
                           </div>
                         ))}
@@ -116,11 +121,17 @@ export default function CoCurriculum() {
                         <Icon className="text-3xl text-amber-600" />
                       </div>
 
-                      <h2 className="mb-5 text-2xl font-bold leading-tight text-gray-800 sm:text-3xl">
+                      <h2
+                        style={{ fontFamily: '"TextaBlack", sans-serif' }}
+                        className="mb-5 text-2xl font-bold leading-tight text-gray-800 sm:text-3xl"
+                      >
                         {item.title}
                       </h2>
 
-                      <div className="text-justify text-base leading-8 text-gray-600 sm:text-lg">
+                      <div
+                        style={{ fontFamily: '"Como", sans-serif' }}
+                        className="text-justify text-base leading-8 text-gray-600 sm:text-lg"
+                      >
                         {item.content}
                       </div>
                     </article>

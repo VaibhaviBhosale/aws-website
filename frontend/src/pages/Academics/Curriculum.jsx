@@ -188,11 +188,17 @@ function Curriculum() {
                     } ${hasImages && index % 2 === 1 ? "lg:order-1" : ""}`}
                   >
                     <div className="rounded-2xl border border-amber-300/25 bg-white p-6 shadow-[0_12px_35px_rgba(0,0,0,0.06)] sm:rounded-3xl sm:p-10 lg:p-12">
-                      <h2 className="mb-5 text-2xl font-bold leading-tight text-[#23344e] sm:mb-6 sm:text-3xl lg:text-[36px]">
+                      <h2
+  style={{ fontFamily: '"TextaBlack", sans-serif' }}
+  className="mb-5 text-2xl font-bold leading-tight text-[#23344e] sm:mb-6 sm:text-3xl lg:text-[36px]"
+>
                         {item.title}
                       </h2>
 
-                      <div className="text-base leading-8 text-[#555] sm:text-lg sm:leading-[1.9]">
+                      <div
+  style={{ fontFamily: '"Como", sans-serif' }}
+  className="text-base leading-8 text-[#555] sm:text-lg sm:leading-[1.9]"
+>
                         {renderContent(item.content)}
                       </div>
                     </div>

@@ -9,7 +9,11 @@ function SectionTabs({ sections, activeSection, onSectionChange }) {
             key={section.id}
             type="button"
             onClick={() => onSectionChange(section.id)}
-            className={`rounded-full px-6 py-3 text-sm font-semibold transition-all duration-300 sm:text-base ${
+            style={{
+              fontFamily: "Como, sans-serif",
+              fontWeight: 700,
+            }}
+            className={`rounded-full px-6 py-3 text-sm transition-all duration-300 sm:text-base ${
               isActive
                 ? "bg-amber-500 text-white shadow-md shadow-amber-200"
                 : "border border-amber-200 bg-white text-gray-700 hover:border-amber-400 hover:bg-amber-50"

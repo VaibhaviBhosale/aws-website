@@ -26,7 +26,7 @@ function PrincipalDesk() {
 
   const pageData =
     branchKey === "warje" &&
-    (sectionKey === "primary" || sectionKey === "secondary")
+      (sectionKey === "primary" || sectionKey === "secondary")
       ? branchData?.principal
       : branchData?.[sectionKey];
 
@@ -74,21 +74,33 @@ function PrincipalDesk() {
                 />
 
                 <div className="px-2 pb-4 pt-2 text-center">
-                  <h1 className="mt-5 text-3xl font-extrabold text-[#23344e] sm:text-[34px]">
+                  <h1
+                    style={{ fontFamily: '"TextaBlack", sans-serif' }}
+                    className="mt-5 text-3xl font-extrabold text-[#23344e] sm:text-[34px]"
+                  >
                     {principal.name}
                   </h1>
 
-                  <p className="mt-2 text-lg font-medium text-[#d39c08]">
+                  <p
+                    style={{ fontFamily: '"Como", sans-serif' }}
+                    className="mt-2 text-lg font-medium text-[#d39c08]"
+                  >
                     {principal.designation}
                   </p>
 
-                  <p className="mt-1 text-base text-gray-600">
+                  <p
+                    style={{ fontFamily: '"Como", sans-serif' }}
+                    className="mt-1 text-base text-gray-600"
+                  >
                     {principal.campus}
                   </p>
 
                   <div className="mx-auto my-[18px] h-1 w-20 rounded-full bg-[#d39c08]" />
 
-                  <blockquote className="mt-4 text-center text-base italic leading-8 text-gray-500">
+                  <blockquote
+                    style={{ fontFamily: '"Como", sans-serif' }}
+                    className="mt-4 text-center text-base italic leading-8 text-gray-500"
+                  >
                     &ldquo;{principal.quote}&rdquo;
                   </blockquote>
                 </div>
@@ -98,15 +110,24 @@ function PrincipalDesk() {
             {/* Leadership Message */}
             <div className="lg:col-span-7">
               <div className="mt-4 lg:mt-0 lg:pl-8">
-                <p className="mb-4 text-sm font-bold uppercase tracking-[3px] text-[#d39c08]">
+                <p
+                  style={{ fontFamily: '"Como", sans-serif' }}
+                  className="mb-4 text-sm font-bold uppercase tracking-[3px] text-[#d39c08]"
+                >
                   {principal.messageTag}
                 </p>
 
-                <h2 className="mb-7 text-3xl font-extrabold leading-tight text-[#24364b] sm:text-4xl">
+                <h2
+                  style={{ fontFamily: '"TextaBlack", sans-serif' }}
+                  className="mb-7 text-3xl font-extrabold leading-tight text-[#24364b] sm:text-4xl"
+                >
                   {principal.messageTitle}
                 </h2>
 
-                <div className="space-y-5 text-justify text-base leading-8 text-gray-600 sm:text-[17px]">
+                <div
+                  style={{ fontFamily: '"Como", sans-serif' }}
+                  className="space-y-5 text-justify text-base leading-8 text-gray-600 sm:text-[17px]"
+                >
                   {principal.message.map((paragraph, index) => (
                     <p key={index} className="whitespace-pre-line">
                       {paragraph}
@@ -123,7 +144,10 @@ function PrincipalDesk() {
       {pageData.highlights?.length > 0 && (
         <section className="px-4 py-10 sm:px-6 sm:py-14">
           <div className="mx-auto max-w-7xl">
-            <h2 className="mb-10 text-center text-3xl font-extrabold text-[#24364b] sm:mb-12 sm:text-4xl">
+            <h2
+              style={{ fontFamily: '"TextaBlack", sans-serif' }}
+              className="mb-10 text-center text-3xl font-extrabold text-[#24364b] sm:mb-12 sm:text-4xl"
+            >
               Key Highlights
             </h2>
 
@@ -140,11 +164,17 @@ function PrincipalDesk() {
                       <Icon size={28} strokeWidth={1.8} />
                     </div>
 
-                    <h3 className="mb-4 text-xl font-bold text-[#23344e] sm:text-[22px]">
+                    <h3
+                      style={{ fontFamily: '"TextaBlack", sans-serif' }}
+                      className="mb-4 text-xl font-bold text-[#23344e] sm:text-[22px]"
+                    >
                       {item.title}
                     </h3>
 
-                    <p className="text-[15px] leading-7 text-gray-600">
+                    <p
+                      style={{ fontFamily: '"Como", sans-serif' }}
+                      className="text-[15px] leading-7 text-gray-600"
+                    >
                       {item.description}
                     </p>
                   </article>

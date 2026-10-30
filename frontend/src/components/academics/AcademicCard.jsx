@@ -6,7 +6,7 @@ import {
   Users,
   UserRound,
   Palette,
-} from "lucide-react";  
+} from "lucide-react";
 
 const icons = {
   pedagogy: Lightbulb,
@@ -22,12 +22,11 @@ const icons = {
 function AcademicCard({ category, branch, section }) {
   const Icon = icons[category.slug] || BookOpen;
 
-  // Map Principal's Desk category slugs to the correct route.
   const categorySlug = category.slug.startsWith("principal-")
-  ? "principal-desk"
-  : category.slug === "co-curricular"
-    ? "co-curriculum"
-    : category.slug;
+    ? "principal-desk"
+    : category.slug === "co-curricular"
+      ? "co-curriculum"
+      : category.slug;
 
   const pageUrl = `/academics/${branch}/${section}/${categorySlug}`;
 
@@ -42,15 +41,21 @@ function AcademicCard({ category, branch, section }) {
       </div>
 
       {/* Category Title */}
-      <h3 className="mt-5 text-[17px] font-bold leading-6 text-[#293b53]">
-        {category.name}
-      </h3>
+      <h3
+  className="mt-4 text-[18px] leading-5 text-[#293b53]"
+  style={{ fontFamily: "TextaBlack, sans-serif", fontWeight: 900 }}
+>
+  {category.name}
+</h3>
 
       {/* Description and Arrow */}
-      <div className="relative mt-2 w-full px-1">
-        <p className="text-sm leading-6 text-[#777777]">
-          {category.description}
-        </p>
+      <div className="relative mt-1 w-full px-1">
+        <p
+  className="text-sm leading-5 text-[#777777]"
+  style={{ fontFamily: "Como, sans-serif", fontWeight: 700 }}
+>
+  {category.description}
+</p>
 
         <ArrowUpRight
           size={20}

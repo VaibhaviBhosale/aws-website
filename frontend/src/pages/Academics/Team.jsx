@@ -61,11 +61,17 @@ function Team() {
         />
       </div>
 
-      <h3 className="mb-2 text-2xl font-bold leading-snug text-[#23344e]">
+      <h3
+  style={{ fontFamily: '"TextaBlack", sans-serif' }}
+  className="mb-2 text-2xl font-bold leading-snug text-[#23344e]"
+>
         {person.name}
       </h3>
 
-      <p className="text-base font-semibold leading-relaxed text-[#d49c07]">
+      <p
+  style={{ fontFamily: '"Como", sans-serif' }}
+  className="text-base font-semibold leading-relaxed text-[#d49c07]"
+>
         {person.designation}
       </p>
 
@@ -79,7 +85,10 @@ function Team() {
       <div className="mx-auto my-4 h-[3px] w-16 rounded-full bg-[#d49c07]" />
 
       {person.description && (
-        <p className="text-[15px] leading-7 text-gray-600">
+        <p
+  style={{ fontFamily: '"Como", sans-serif' }}
+  className="text-[15px] leading-7 text-gray-600"
+>
           {person.description}
         </p>
       )}
@@ -93,7 +102,10 @@ function Team() {
     return (
       <section className="mb-16">
         {title && (
-          <h2 className="mb-8 text-center text-3xl font-bold text-[#23344e] md:text-4xl">
+          <h2
+  style={{ fontFamily: '"TextaBlack", sans-serif' }}
+  className="mb-8 text-center text-3xl font-bold text-[#23344e] md:text-4xl"
+>
             {title}
           </h2>
         )}
@@ -129,7 +141,10 @@ function Team() {
         />
       </div>
 
-      <h3 className="mb-3 text-2xl font-bold leading-snug text-[#23344e]">
+      <h3
+  style={{ fontFamily: '"TextaBlack", sans-serif' }}
+  className="mb-3 text-2xl font-bold leading-snug text-[#23344e]"
+>
         {person.name}
       </h3>
 
@@ -162,12 +177,18 @@ function Team() {
           </div>
 
           <div className="px-2 pb-3 pt-7 text-center sm:px-5 sm:pt-9">
-            <h3 className="mb-4 text-2xl font-bold text-[#23344e] md:text-3xl">
+            <h3
+  style={{ fontFamily: '"TextaBlack", sans-serif' }}
+  className="mb-4 text-2xl font-bold text-[#23344e] md:text-3xl"
+>
               {groupTeam.title}
             </h3>
 
             {groupTeam.description && (
-              <p className="mx-auto max-w-4xl text-base leading-8 text-gray-600 md:text-[17px]">
+              <p
+  style={{ fontFamily: '"Como", sans-serif' }}
+  className="mx-auto max-w-4xl text-base leading-8 text-gray-600 md:text-[17px]"
+>
                 {groupTeam.description}
               </p>
             )}
@@ -194,12 +215,18 @@ function Team() {
         <div className="mx-auto max-w-7xl">
           {/* Page heading */}
           <header className="mb-12 text-center md:mb-16">
-            <h1 className="mb-5 text-4xl font-extrabold leading-tight text-[#23344e] sm:text-5xl">
+            <h1
+  style={{ fontFamily: '"TextaBlack", sans-serif' }}
+  className="mb-5 text-4xl font-extrabold leading-tight text-[#23344e] sm:text-5xl"
+>
               {team.title}
             </h1>
 
             {team.subtitle && (
-              <p className="mx-auto max-w-3xl text-base leading-8 text-gray-600 sm:text-lg">
+              <p
+  style={{ fontFamily: '"Como", sans-serif' }}
+  className="mx-auto max-w-3xl text-base leading-8 text-gray-600 sm:text-lg"
+>
                 {team.subtitle}
               </p>
             )}

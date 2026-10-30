@@ -51,11 +51,17 @@ function Pedagogy() {
             strokeWidth={1.7}
           />
 
-          <h1 className="mb-4 text-2xl font-bold text-[#23344e] sm:text-3xl">
+          <h1
+            className="mb-4 text-2xl text-[#23344e] sm:text-3xl"
+            style={{ fontFamily: "TextaBlack, sans-serif", fontWeight: 900 }}
+          >
             Pedagogy Content Coming Soon
           </h1>
 
-          <p className="text-base leading-7 text-gray-600 sm:text-lg">
+          <p
+            className="text-base leading-7 text-gray-600 sm:text-lg"
+            style={{ fontFamily: "Como, sans-serif", fontWeight: 700 }}
+          >
             The pedagogy content for {branchName} {sectionName} is not
             available yet.
           </p>
@@ -78,6 +84,7 @@ function Pedagogy() {
         return (
           <div key={item.title}>
             <section className="relative overflow-hidden py-14 sm:py-16 lg:py-[70px]">
+
               {/* Decorative Background Shapes */}
               <div className="pointer-events-none absolute -right-32 -top-32 h-[300px] w-[300px] rounded-[58%_42%_65%_35%] bg-amber-300/20 sm:h-[420px] sm:w-[420px]" />
 
@@ -92,13 +99,14 @@ function Pedagogy() {
 
               <div className="pointer-events-none absolute bottom-[14%] right-[18%] h-6 w-6 rounded-full bg-amber-400/40" />
 
-              <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-8">
+              <div className="relative z-10 mx-auto w-full max-w-[1600px] px-5 sm:px-8 lg:px-12">
                 <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-12">
+
                   {/* Images */}
                   <div
-                    className={`lg:col-span-5 ${
-                      index % 2 === 1 ? "lg:order-2" : ""
-                    }`}
+                    className={`${
+                      images.length === 2 ? "lg:col-span-5" : "lg:col-span-5"
+                    } ${index % 2 === 1 ? "lg:order-2" : ""}`}
                   >
                     {images.length > 0 && (
                       <div
@@ -126,31 +134,40 @@ function Pedagogy() {
                             loading="lazy"
                             decoding="async"
                             className={`w-full rounded-xl border-4 border-amber-300 bg-white p-1.5 object-cover shadow-lg transition-transform duration-300 hover:scale-[1.02] ${
-                              images.length === 1
-                                ? "h-[240px] sm:h-[360px]"
-                                : "h-[150px] sm:h-[200px]"
+                              //img height 
+                              images.length === 2
+                                ? "h-[220px] sm:h-[250px]"
+                                : images.length === 1
+                                  ? "h-[240px] sm:h-[360px]"
+                                  : "h-[150px] sm:h-[200px]"
                             }`}
                           />
                         ))}
                       </div>
                     )}
 
-                    <p className="mt-3 text-center text-[13px] text-[#464545]">
+                    <p
+                      className="mt-3 text-center text-[13px] text-[#464545]"
+                      style={{ fontFamily: "Como, sans-serif", fontWeight: 700 }}
+                    >
                       {item.tagline || item.title}
                     </p>
                   </div>
 
                   {/* Content */}
                   <div
-                    className={`lg:col-span-7 ${
-                      index % 2 === 1 ? "lg:order-1" : ""
-                    }`}
-                  >
+  className={`min-w-0 lg:col-span-7 ${
+    index % 2 === 1 ? "lg:order-1" : ""
+  }`}
+>
                     <div className="mb-4 text-amber-400">
                       <Icon size={34} strokeWidth={1.8} />
                     </div>
 
-                    <h2 className="mb-4 text-2xl font-bold leading-tight text-[#23344e] sm:text-3xl lg:text-[36px]">
+                    <h2
+                      className="mb-4 text-2xl leading-tight text-[#23344e] sm:text-3xl lg:text-[36px]"
+                      style={{ fontFamily: "TextaBlack, sans-serif", fontWeight: 900 }}
+                    >
                       {item.title}
                     </h2>
 
@@ -160,7 +177,10 @@ function Pedagogy() {
                         className="absolute -left-1 -top-4 text-amber-300/70"
                       />
 
-                      <p className="relative z-10 pl-5 text-base leading-8 text-gray-600 sm:text-lg">
+                      <p
+                       className="relative z-10 pl-6 text-sm leading-6 text-gray-600 sm:text-base sm:leading-7 lg:text-[18px] lg:leading-[1.6]"
+                        style={{ fontFamily: "Como, sans-serif", fontWeight: 700 }}
+                      >
                         {item.content.split(/<br\s*\/?>/i).map((line, index, lines) => (
                           <span key={index}>
                             {line}
