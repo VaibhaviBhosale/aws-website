@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Enquiry extends Model
 {
+    use HasFactory;
+
     protected $fillable = [
         'student_name',
         'dob',
@@ -27,5 +30,9 @@ class Enquiry extends Model
         'previous_standard',
         'leaving_reason',
         'status',
+    ];
+
+    protected $casts = [
+        'dob' => 'date',
     ];
 }
