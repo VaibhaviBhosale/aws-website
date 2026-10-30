@@ -1,0 +1,44 @@
+/* Bhilarewadi Disclosure Page */
+.bhilarewadi-disclosure-page { min-height: 100vh; padding: 45px 20px 60px; background: #f5f6f8; color: #333; }
+.bhilarewadi-disclosure-container { max-width: 1200px; margin: 0 auto; }
+.bhilarewadi-disclosure-header { margin-bottom: 35px; text-align: center; }
+.bhilarewadi-disclosure-header h1 { margin: 0 0 12px; color: #222; font-family: TextaBlack, sans-serif; font-size: clamp(30px, 4vw, 42px); font-weight: 800; }
+.bhilarewadi-disclosure-header p { margin: 0; color: #666; font-family: Como, sans-serif; font-size: 17px; line-height: 1.6; }
+
+/* Cards and Section Headings */
+.bhilarewadi-disclosure-page .disclosure-card { margin-bottom: 28px; padding: 22px; overflow: hidden; background: #fff; border: 1px solid #eee; border-radius: 16px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08); }
+.bhilarewadi-disclosure-page .disclosure-title { margin: 0 0 20px; padding: 12px 18px; background: #ffc107; color: #222; border-radius: 10px; font-family: TextaBlack, sans-serif; font-size: 22px; font-weight: 700; line-height: 1.4; }
+
+/* Information Tables */
+.bhilarewadi-disclosure-page .disclosure-table-wrapper { width: 100%; overflow-x: auto; }
+.bhilarewadi-disclosure-page .disclosure-table { width: 100%; border-collapse: collapse; font-family: Como, sans-serif; font-size: 15px; line-height: 1.6; }
+.bhilarewadi-disclosure-page .disclosure-table th, .bhilarewadi-disclosure-page .disclosure-table td { padding: 13px 15px; border: 1px solid #e5e5e5; text-align: left; vertical-align: top; }
+.bhilarewadi-disclosure-page .disclosure-table th { width: 32%; background: #f8f8f8; color: #333; font-weight: 700; }
+.bhilarewadi-disclosure-page .disclosure-table td { color: #555; overflow-wrap: anywhere; }
+.bhilarewadi-disclosure-page .disclosure-table a { color: #1769aa; font-weight: 600; text-decoration: none; }
+.bhilarewadi-disclosure-page .disclosure-table a:hover { color: #0d4775; text-decoration: underline; }
+
+/* Document Cards */
+.bhilarewadi-disclosure-page .disclosure-documents { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.bhilarewadi-disclosure-page .disclosure-doc-box { display: flex; min-height: 115px; flex-direction: column; align-items: center; justify-content: center; gap: 10px; padding: 18px 14px; background: #fff; border: 1px solid #eee; border-radius: 12px; color: #333; font-family: Como, sans-serif; font-size: 15px; font-weight: 600; line-height: 1.5; text-align: center; text-decoration: none; overflow-wrap: anywhere; transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; }
+.bhilarewadi-disclosure-page .disclosure-doc-box:hover { transform: translateY(-4px); border-color: #ffc107; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.09); }
+.bhilarewadi-disclosure-page .disclosure-pdf-icon { font-size: 30px; line-height: 1; }
+.bhilarewadi-disclosure-page .disclosure-view-label { color: #1769aa; font-size: 13px; }
+
+/* Tablet */
+@media (max-width: 900px) { .bhilarewadi-disclosure-page .disclosure-documents { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* Mobile */
+@media (max-width: 600px) {
+  .bhilarewadi-disclosure-page { padding: 28px 12px 40px; }
+  .bhilarewadi-disclosure-header { margin-bottom: 25px; }
+  .bhilarewadi-disclosure-header p { font-size: 15px; }
+  .bhilarewadi-disclosure-page .disclosure-card { margin-bottom: 20px; padding: 14px; border-radius: 12px; }
+  .bhilarewadi-disclosure-page .disclosure-title { margin-bottom: 15px; padding: 11px 13px; font-size: 19px; }
+  .bhilarewadi-disclosure-page .disclosure-documents { grid-template-columns: 1fr; gap: 12px; }
+  .bhilarewadi-disclosure-page .disclosure-doc-box { min-height: 85px; flex-direction: row; justify-content: flex-start; padding: 15px; text-align: left; }
+  .bhilarewadi-disclosure-page .disclosure-pdf-icon { flex-shrink: 0; font-size: 27px; }
+  .bhilarewadi-disclosure-page .disclosure-table { font-size: 14px; }
+  .bhilarewadi-disclosure-page .disclosure-table th, .bhilarewadi-disclosure-page .disclosure-table td { min-width: 130px; padding: 10px; }
+  .bhilarewadi-disclosure-page .disclosure-table th { min-width: 115px; }
+}

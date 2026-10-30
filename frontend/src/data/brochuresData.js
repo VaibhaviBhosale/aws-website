@@ -1,0 +1,60 @@
+const brochuresData = [
+  {
+    id: 1,
+    title: "Datta Nagar Branch Brochure",
+    description: "Learn more about our Datta Nagar branch in Pune.",
+    file: "BROUCHER (DN).pdf",
+    location: "Pune",
+    branch: "Datta Nagar Branch",
+  },
+  {
+    id: 2,
+    title: "Dhayari Branch Brochure",
+    description: "Discover our Dhayari branch and its educational facilities.",
+    file: "BROUCHER (WD).pdf",
+    location: "Pune",
+    branch: "Dhayari Branch",
+  },
+  {
+    id: 3,
+    title: "Warje Branch Brochure",
+    description: "Explore our Warje branch, academics, and campus facilities.",
+    file: "BROUCHER (WJ).pdf",
+    location: "Pune",
+    branch: "Warje Branch",
+  },
+  {
+    id: 4,
+    title: "Gokul Nagar Branch Brochure",
+    description: "Explore our Gokul Nagar branch in Pune.",
+    file: "BROUCHER (GN).pdf",
+    location: "Pune",
+    branch: "Gokul Nagar Branch",
+  },
+  {
+    id: 5,
+    title: "Manaji Nagar Branch Brochure",
+    description: "Discover our Manaji Nagar branch and educational programs.",
+    file: "BROUCHER (MN).pdf",
+    location: "Pune",
+    branch: "Manaji Nagar Branch",
+  },
+  {
+    id: 6,
+    title: "Bhilarewadi Branch Brochure",
+    description: "Learn about our Bhilarewadi branch and campus facilities.",
+    file: "BROUCHER (BW).pdf",
+    location: "Pune",
+    branch: "Bhilarewadi Branch",
+  },
+  {
+    id: 7,
+    title: "Undri Branch Brochure",
+    description: "Explore our Undri branch and educational opportunities.",
+    file: "BROUCHER (UN).pdf",
+    location: "Pune",
+    branch: "Undri Branch",
+  },
+];
+
+export default brochuresData;

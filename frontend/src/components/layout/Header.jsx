@@ -43,8 +43,7 @@ const navigation = [
   {
     label: "Contact Us",
     children: [
-      { label: "Contact Details", href: "/contact" },
-      { label: "Quick Enquiry", href: "/enquiry" },
+      { label: "Corporate Office", href: "/corporate-office" },
     ],
   },
 ];

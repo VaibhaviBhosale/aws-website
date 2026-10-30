@@ -17,6 +17,12 @@ import Team from "./pages/Academics/Team";
 import PrincipalDesk from "./pages/Academics/PrincipalDesk";
 import CoCurriculum from "./pages/Academics/CoCurriculum";
 
+import Branches from "./pages/Branches/Branches";
+import CorporateOffice from "./pages/CorporateOffice/CorporateOffice";
+
+import WarjeDisclosure from "./pages/Disclosure/WarjeDisclosure";
+import BhilarewadiDisclosure from "./pages/Disclosure/BhilarewadiDisclosure";
+
 import "./App.css";
 
 function App() {
@@ -29,19 +35,29 @@ return ( <Router> <div className="app"> <Header />
         <Route path="/managing-director" element={<ManagingDirector />} />
         <Route path="/leadership" element={<Leadership />} />
 
-<Route path="/academics/bhilarewadi" element={<BranchPage branch={academicsData.bhilarewadi} />} />
-<Route path="/academics/warje" element={<BranchPage branch={academicsData.warje} />} />
-<Route path="/academics/manajinagar" element={<BranchPage branch={academicsData.manajinagar} />} />
-<Route path="/academics/undri" element={<BranchPage branch={academicsData.undri} />} />
 
-<Route path="/academics/solapur" element={<BranchPage branch={academicsData.solapur} />} />
-<Route path="/academics/belagavi" element={<BranchPage branch={academicsData.belagavi} />} />
+        <Route path="/academics/bhilarewadi" element={<BranchPage branch={academicsData.bhilarewadi} />} />
+        <Route path="/academics/warje" element={<BranchPage branch={academicsData.warje} />} />
+        <Route path="/academics/manajinagar" element={<BranchPage branch={academicsData.manajinagar} />} />
+        <Route path="/academics/undri" element={<BranchPage branch={academicsData.undri} />} />
 
-<Route path="/academics/:branch/:section/pedagogy" element={<Pedagogy />} />
-<Route path="/academics/:branch/:section/curriculum" element={<Curriculum />} />
-<Route path="/academics/:branch/:section/team" element={<Team />} />
-<Route path="/academics/:branch/:section/principal-desk" element={<PrincipalDesk />} />
-<Route path="/academics/:branch/:section/co-curriculum" element={<CoCurriculum />} />
+        <Route path="/academics/solapur" element={<BranchPage branch={academicsData.solapur} />} />
+        <Route path="/academics/belagavi" element={<BranchPage branch={academicsData.belagavi} />} />
+
+        <Route path="/academics/:branch/:section/pedagogy" element={<Pedagogy />} />
+        <Route path="/academics/:branch/:section/curriculum" element={<Curriculum />} />
+        <Route path="/academics/:branch/:section/team" element={<Team />} />
+        <Route path="/academics/:branch/:section/principal-desk" element={<PrincipalDesk />} />
+        <Route path="/academics/:branch/:section/co-curriculum" element={<CoCurriculum />} />
+
+<Route path="/branches" element={<Branches />} />
+<Route path="/corporate-office" element={<CorporateOffice />} />
+
+<Route path="/mandatory-disclosure/warje" element={<WarjeDisclosure />} />
+<Route
+  path="/mandatory-disclosure/bhilarewadi"
+  element={<BhilarewadiDisclosure />}
+/>
 
         <Route path="*" element={<Home />} />
       </Routes>

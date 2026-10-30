@@ -1,0 +1,27 @@
+.corporate-office-page { background: #f7f8fc; font-family: 'Poppins', sans-serif; }
+.corporate-office-section { padding: 65px 20px; }
+.corporate-office-container { max-width: 1250px; margin: 0 auto; }
+.corporate-office-grid { display: grid; grid-template-columns: 5fr 7fr; align-items: stretch; gap: 35px; }
+.corporate-contact-column { min-width: 0; }
+.corporate-contact-card { height: 100%; padding: 35px 30px; background: #fff; border: 1px solid #e9edf4; border-radius: 16px; box-shadow: 0 10px 35px rgba(28, 48, 86, 0.08); }
+.corporate-contact-heading { margin: 0 0 30px; color: #173568; font-family: 'TextaBlack', sans-serif; font-size: 30px; font-weight: 700; }
+.corporate-contact-item { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 26px; }
+.corporate-contact-icon { display: flex; flex: 0 0 45px; align-items: center; justify-content: center; width: 45px; height: 45px; color: #173568; background: #edf3ff; border-radius: 12px; font-size: 18px; }
+.corporate-contact-details { min-width: 0; padding-top: 2px; }
+.corporate-contact-label { margin-bottom: 7px; color: #173568; font-size: 14px; font-weight: 700; }
+.corporate-contact-value { color: #454f60; font-size: 14px; line-height: 1.9; overflow-wrap: anywhere; }
+.corporate-contact-value a { color: #454f60; text-decoration: none; transition: color 0.2s ease; }
+.corporate-contact-value a:hover { color: #2458a6; }
+.corporate-contact-divider { height: 1px; margin: 28px 0 25px; background: #e5e9f0; }
+.corporate-hours-heading { display: flex; align-items: center; gap: 10px; margin: 0 0 20px; color: #173568; font-family: 'TextaBlack', sans-serif; font-size: 21px; font-weight: 700; }
+.corporate-hours-heading svg { color: #e5a800; font-size: 19px; }
+.corporate-hours-table { display: flex; flex-direction: column; gap: 0; }
+.corporate-hours-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 13px 0; border-bottom: 1px solid #edf0f5; color: #535e70; font-size: 13px; }
+.corporate-hours-row:last-child { border-bottom: none; }
+.corporate-hours-row strong { color: #25344d; font-size: 12px; font-weight: 700; text-align: right; white-space: nowrap; }
+.corporate-closed-badge { padding: 5px 11px; color: #c0392b !important; background: #fff0ed; border-radius: 20px; }
+.corporate-map-column { display: flex; min-width: 0; }
+.corporate-map-wrapper { position: relative; width: 100%; min-height: 600px; overflow: hidden; background: #e9edf4; border: 1px solid #e3e8f0; border-radius: 16px; box-shadow: 0 10px 35px rgba(28, 48, 86, 0.08); }
+.corporate-map-wrapper iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+@media (max-width: 992px) { .corporate-office-section { padding: 45px 20px; } .corporate-office-grid { grid-template-columns: 1fr; gap: 25px; } .corporate-contact-card { padding: 30px; } .corporate-map-wrapper { min-height: 450px; } }
+@media (max-width: 576px) { .corporate-office-section { padding: 30px 14px; } .corporate-contact-card { padding: 24px 18px; border-radius: 12px; } .corporate-contact-heading { margin-bottom: 25px; font-size: 27px; } .corporate-contact-item { gap: 12px; margin-bottom: 22px; } .corporate-contact-icon { flex-basis: 40px; width: 40px; height: 40px; font-size: 16px; } .corporate-contact-value { font-size: 13px; } .corporate-hours-heading { font-size: 20px; } .corporate-hours-row { align-items: flex-start; font-size: 12px; } .corporate-hours-row strong { font-size: 11px; } .corporate-map-wrapper { min-height: 350px; border-radius: 12px; } }

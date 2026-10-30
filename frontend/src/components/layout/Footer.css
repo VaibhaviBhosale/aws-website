@@ -44,8 +44,15 @@ a.footer-contact:hover { color: #ffbd00; }
 .footer-bottom p { margin: 0; font-family: "Como", sans-serif !important; font-size: 12px; font-weight: 700; line-height: 1.6; }
 .footer-bottom > p:first-child { color: #ffbd00; }
 .footer-developer { color: #8992a4; text-align: right; }
-.footer-developer span { color: #ffbd00; font-weight: 800; }
+.footer-developer a { color: #ffbd00; font-weight: 800; }
 
+.footer-link-parent { display: flex; align-items: center; gap: 8px; width: 100%; padding: 0; color: inherit; background: none; border: none; font: inherit; text-align: left; cursor: pointer; }
+.footer-link-parent svg { flex-shrink: 0; transition: transform 0.2s ease; }
+.footer-link-parent .disclosure-chevron-open { transform: rotate(90deg); }
+.footer-sub-links { margin: 5px 0 8px 24px; padding: 0; list-style: none; }
+.footer-sub-links li { margin: 5px 0; }
+.footer-sub-links a { display: flex; align-items: center; gap: 6px; text-decoration: none; }
+.footer-sub-links a:hover { color: #e5a800; }
 /* SMALL DESKTOP AND TABLETS */
 @media (max-width: 1250px) {
   .footer-grid { grid-template-columns: 1fr 0.7fr 1fr 1.2fr; gap: 20px; }

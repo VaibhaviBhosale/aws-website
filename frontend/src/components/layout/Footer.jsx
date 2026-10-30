@@ -8,6 +8,7 @@ import {
 
 import "./Footer.css";
 import schoolLogo from "../../assets/images/logo_aws.png";
+import { useState } from "react";
 
 const quickLinks = [
   { label: "About Us", href: "/about" },
@@ -17,10 +18,17 @@ const quickLinks = [
   { label: "Sports", href: "/sports" },
   { label: "Admission", href: "/admission" },
   { label: "Gallery", href: "/gallery" },
-  { label: "Disclosure", href: "/disclosure" },
+  {
+    label: "Disclosure",
+    children: [
+      { label: "Warje", href: "/mandatory-disclosure/warje" },
+      { label: "Bhilarewadi", href: "/mandatory-disclosure/bhilarewadi" },
+    ],
+  },
 ];
 
 function Footer() {
+  const [disclosureOpen, setDisclosureOpen] = useState(false);
   return (
     <footer className="site-footer">
       <div className="footer-container">
@@ -83,10 +91,40 @@ function Footer() {
             <ul className="footer-links">
               {quickLinks.map((link) => (
                 <li key={link.label}>
-                  <a href={link.href}>
-                    <ChevronRight size={19} />
-                    <span>{link.label}</span>
-                  </a>
+                  {link.children ? (
+                    <>
+                      <button
+                        type="button"
+                        className="footer-link-parent"
+                        onClick={() => setDisclosureOpen((open) => !open)}
+                        aria-expanded={disclosureOpen}
+                      >
+                        <ChevronRight
+                          size={19}
+                          className={disclosureOpen ? "disclosure-chevron-open" : ""}
+                        />
+                        <span>{link.label}</span>
+                      </button>
+
+                      {disclosureOpen && (
+                        <ul className="footer-sub-links">
+                          {link.children.map((child) => (
+                            <li key={child.label}>
+                              <a href={child.href}>
+                                <ChevronRight size={16} />
+                                <span>{child.label}</span>
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </>
+                  ) : (
+                    <a href={link.href}>
+                      <ChevronRight size={19} />
+                      <span>{link.label}</span>
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
@@ -144,13 +182,13 @@ function Footer() {
             </div>
 
             <div className="footer-map">
-            <iframe
-              title="Aaryans World School Corporate Office - ASCON"
-              src="https://maps.google.com/maps?q=18.4547096,73.8278176&z=17&output=embed"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              allowFullScreen
-            />
+              <iframe
+                title="Aaryans World School Corporate Office - ASCON"
+                src="https://maps.google.com/maps?q=18.4547096,73.8278176&z=14&output=embed"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
 
             </div>
           </div>
@@ -165,7 +203,14 @@ function Footer() {
           </p>
 
           <p className="footer-developer">
-            Developed by <span>Aayojan</span>
+            Developed by{" "}
+            <a
+              href="https://www.aayojanai.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Aayojan AI
+            </a>
           </p>
         </div>
       </div>

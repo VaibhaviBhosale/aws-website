@@ -1,0 +1,83 @@
+/* ==================== MAIN PAGE ==================== */
+.branches-page { width: 100%; min-height: 100vh; margin: 0; padding: 0; background: #fafafa; color: #23344e; }
+.branches-page * { box-sizing: border-box; }
+.branches-page .container { width: 100%; max-width: 1320px; margin: 0 auto; padding-left: 20px; padding-right: 20px; }
+
+/* ==================== STATE NAVIGATION ==================== */
+.branches-page .state-nav-wrapper { position: sticky; top: 80px; z-index: 100; width: 100%; margin: 0; padding: 16px 0; background: #fff; box-shadow: 0 3px 12px rgba(0,0,0,0.06); }
+.branches-page .state-nav { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 18px; width: 100%; margin: 0; padding: 0; }
+.branches-page .state-tab { display: inline-flex; justify-content: center; align-items: center; min-width: 120px; padding: 13px 26px; border: 1px solid transparent; border-radius: 40px; background: transparent; color: #111; font-family: "TextaBlack", sans-serif; font-size: 18px; font-weight: 700; cursor: pointer; transition: background 0.25s ease, color 0.25s ease; }
+.branches-page .state-tab:hover { background: #fff3cd; color: #111; }
+.branches-page .state-tab.active { background: #ffc107; border-color: #e5ad00; color: #111; }
+
+/* ==================== BRANCHES SECTION ==================== */
+.branches-page .branches-section { display: block; width: 100%; margin: 0 !important; padding: 30px 0 60px !important; background-image: linear-gradient(rgba(255,255,255,0.65), rgba(255,255,255,0.65)), var(--branches-bg-image); background-size: cover; background-position: center; background-repeat: no-repeat; }
+.branches-page .branches-section > .container { margin-top: 0 !important; }
+.branches-page .branches-heading { display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 0 0 34px !important; padding: 0; text-align: center; }
+.branches-page .branches-heading h3 { margin: 0 0 14px !important; padding: 0; color: #23344e; font-family: "TextaBlack", sans-serif; font-size: 40px; font-weight: 700; line-height: 1.25; }
+.branches-page .heading-divider { width: 72px; height: 4px; margin: 0 auto; border-radius: 10px; background: #ffc107; }
+
+/* ==================== BRANCH GRID ==================== */
+.branches-page .branches-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: stretch; gap: 26px; width: 100%; margin: 0; padding: 0; }
+.branches-page .branch-card { display: flex; flex-direction: column; min-width: 0; height: 100%; margin: 0; padding: 0; overflow: hidden; border: none; border-radius: 16px; background: #fff; box-shadow: 0 8px 26px rgba(35,52,78,0.09); transition: transform 0.25s ease, box-shadow 0.25s ease; }
+.branches-page .branch-card:hover { transform: translateY(-5px); box-shadow: 0 15px 34px rgba(35,52,78,0.15); }
+
+/* ==================== BRANCH IMAGE ==================== */
+.branches-page .branch-img-wrapper { position: relative; width: 100%; height: 230px; min-height: 230px; margin: 0; padding: 0; overflow: hidden; background: #eee; }
+.branches-page .branch-img-wrapper img { display: block; width: 100%; height: 100%; margin: 0; padding: 0; object-fit: cover; object-position: center; }
+.branches-page .card-badge { position: absolute; top: 16px; right: 14px; z-index: 2; max-width: calc(100% - 28px); padding: 9px 15px; border-radius: 30px; background: #ffc107; color: #111; font-family: "TextaBlack", sans-serif; font-size: 14px; font-weight: 700; line-height: 1.35; text-align: center; }
+
+/* ==================== BRANCH DETAILS ==================== */
+.branches-page .branch-body { display: flex; flex: 1; flex-direction: column; padding: 24px 25px 22px; background: #fff; }
+.branches-page .branch-title { margin: 4px 0 20px !important; padding: 0; color: #23344e; font-family: "Playfair Display", serif; font-size: 23px; font-weight: 700; line-height: 1.4; overflow-wrap: anywhere; }
+.branches-page .contact-list { flex: 1; margin: 0 0 20px !important; padding: 0 !important; list-style: none; }
+.branches-page .contact-list li { display: flex; align-items: flex-start; gap: 12px; margin: 0 0 15px !important; padding: 0; color: #555; font-family: "Como", sans-serif; font-size: 15px; line-height: 1.7; overflow-wrap: anywhere; }
+.branches-page .contact-list li svg { flex: 0 0 16px; width: 16px; margin-top: 5px; color: #d32f2f; }
+.branches-page .contact-list li span { min-width: 0; }
+.branches-page .contact-list li a { min-width: 0; color: #444; text-decoration: none; overflow-wrap: anywhere; }
+.branches-page .contact-list li a:hover { color: #d32f2f; }
+
+/* ==================== ACTION BUTTONS ==================== */
+.branches-page .action-icons { display: flex; justify-content: center; align-items: center; gap: 22px; margin-top: auto; padding-top: 15px; }
+.branches-page .icon-btn { display: inline-flex; flex: 0 0 52px; align-items: center; justify-content: center; width: 52px; height: 52px; margin: 0; padding: 0; border: none; border-radius: 50%; color: #fff; font-size: 19px; text-decoration: none; cursor: pointer; transition: transform 0.25s ease, box-shadow 0.25s ease; }
+.branches-page .icon-btn:hover:not(:disabled) { transform: translateY(-3px); box-shadow: 0 5px 12px rgba(0,0,0,0.15); }
+.branches-page .map-icon { background: #ffc107; color: #111; }
+.branches-page .gallery-icon { background: #565555; color: #fff; }
+.branches-page .brochure-icon { background: #dc3545; color: #fff; }
+.branches-page .disabled-icon { background: #ddd; color: #777; cursor: not-allowed; }
+
+/* ==================== TABLET ==================== */
+@media (max-width: 1100px) {
+.branches-page .container { max-width: 100%; padding-right: 24px; padding-left: 24px; }
+.branches-page .branches-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+.branches-page .branch-img-wrapper { height: 220px; min-height: 220px; }
+.branches-page .branch-body { padding: 22px; }
+.branches-page .branches-heading h3 { font-size: 36px; }
+}
+
+/* ==================== MOBILE ==================== */
+@media (max-width: 600px) {
+.branches-page .state-nav-wrapper { top: 70px; padding: 12px 0; }
+.branches-page .state-nav { gap: 7px; padding: 0 10px; }
+.branches-page .state-tab { min-width: auto; padding: 10px 16px; font-size: 16px; }
+.branches-page .branches-section { padding: 25px 0 40px !important; }
+.branches-page .container { padding-right: 16px; padding-left: 16px; }
+.branches-page .branches-heading { margin-bottom: 24px !important; }
+.branches-page .branches-heading h3 { margin-bottom: 12px !important; font-size: 29px; }
+.branches-page .branches-grid { grid-template-columns: minmax(0, 1fr); gap: 22px; }
+.branches-page .branch-img-wrapper { height: 230px; min-height: 230px; }
+.branches-page .branch-body { padding: 21px; }
+.branches-page .branch-title { margin-bottom: 17px !important; font-size: 21px; }
+.branches-page .contact-list li { font-size: 14px; }
+.branches-page .action-icons { gap: 25px; }
+}
+
+/* ==================== SMALL MOBILE ==================== */
+@media (max-width: 380px) {
+.branches-page .state-tab { padding: 9px 12px; font-size: 14px; }
+.branches-page .branches-heading h3 { font-size: 26px; }
+.branches-page .branch-img-wrapper { height: 200px; min-height: 200px; }
+.branches-page .branch-body { padding: 17px; }
+}
+
+
