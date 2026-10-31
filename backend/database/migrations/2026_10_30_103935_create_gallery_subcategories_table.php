@@ -5,7 +5,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 class CreateGallerySubcategoriesTable extends Migration
-{
+{ 
     public function up()
     {
         Schema::create('gallery_subcategories', function (Blueprint $table) {

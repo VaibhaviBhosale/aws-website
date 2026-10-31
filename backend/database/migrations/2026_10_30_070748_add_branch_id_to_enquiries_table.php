@@ -18,8 +18,7 @@ class AddBranchIdToEnquiriesTable extends Migration
                   ->on('branches')
                   ->onDelete('set null');
         });
-    }
-
+    } 
     public function down()
     {
         Schema::table('enquiries', function (Blueprint $table) {

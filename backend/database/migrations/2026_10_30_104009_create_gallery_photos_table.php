@@ -20,7 +20,7 @@ class CreateGalleryPhotosTable extends Migration
             $table->string('image', 255);
 
             $table->string('title', 255)->nullable();
-
+ 
             $table->tinyInteger('status')->nullable()->default(1)
                 ->comment('1=Active, 0=Inactive');
 
