@@ -108,3 +108,69 @@ a.footer-contact:hover { color: #ffbd00; }
   .footer-socials a, .footer-links a, a.footer-contact { transition: none; }
   .footer-socials a:hover, .footer-links a:hover { transform: none; }
 }
+
+/* Floating Action Buttons */
+.float-buttons {
+    position: fixed;
+    right: 12px;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    z-index: 9999;
+}
+
+.float-buttons a {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    text-decoration: none;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.float-buttons svg {
+    width: 30px;
+    height: 30px;
+}
+
+.whatsapp-float {
+    background: #25D366;
+}
+
+.whatsapp-float:hover {
+    background: #1da851;
+    transform: scale(1.1);
+}
+
+.playstore-float {
+    background: #0d6efd;
+}
+
+.playstore-float:hover {
+    background: #084298;
+    transform: scale(1.1);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .float-buttons {
+        right: 10px;
+        bottom: 15px;
+        gap: 10px;
+    }
+
+    .float-buttons a {
+        width: 50px;
+        height: 50px;
+    }
+
+    .float-buttons svg {
+        width: 26px;
+        height: 26px;
+    }
+}

@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { ChevronDown, Menu, X, UserRound } from "lucide-react";
+import { Link } from "react-router-dom";
 import "./Header.css";
 import schoolLogo from "../../assets/images/logo_aws.png";
 
@@ -89,14 +90,14 @@ function Header() {
   return (
     <header className="site-header" ref={headerRef}>
       <div className="header-container">
-        <a
-          href="/"
+        <Link
+          to="/"
           className="header-logo"
           aria-label="Aaryans World School Home"
           onClick={closeMenu}
         >
           <img src={schoolLogo} alt="Aaryans World School" />
-        </a>
+        </Link>
 
         <button
           className="mobile-menu-toggle"
@@ -153,40 +154,40 @@ function Header() {
                           {child.label}
                         </div>
                       ) : (
-                        <a
-                          href={child.href}
+                        <Link
+                          to={child.href}
                           className="dropdown-link"
                           key={child.label}
                           onClick={closeMenu}
                         >
                           {child.label}
-                        </a>
+                        </Link>
                       )
                     )}
                   </div>
 
                 </>
               ) : (
-                <a
-                  href={item.href}
+                <Link
+                  to={item.href}
                   className="nav-link"
                   onClick={closeMenu}
                 >
                   {item.label}
-                </a>
+                </Link>
               )}
             </div>
           ))}
 
-          <a
-            href="/login"
+          <Link
+            to="/login"
             className="login-button"
             aria-label="Login"
             title="Login"
             onClick={closeMenu}
           >
             <UserRound size={23} fill="currentColor" strokeWidth={2.5} />
-          </a>
+          </Link>
         </nav>
       </div>
     </header>

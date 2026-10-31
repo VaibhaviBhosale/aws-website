@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import api from "../services/api";
 import "../styles/Home.css";
 import heroVideo from "../assets/videos/slider.MP4";
@@ -91,17 +91,17 @@ const campusVideos = [
 ];
 
 const ventures = [
-    { img: venture1, name: "Aaryans YO Bhajiwala" },
-    { img: venture2, name: "Aaryans Commando Training Camp" },
-    { img: venture3, name: "Aaryans Farm Fresh" },
-    { img: venture4, name: "Aaryans Preschool" },
-    { img: venture5, name: "Aaryans Sharpner" },
-    { img: venture6, name: "Aaryans Riverwood Resort" },
-    { img: venture7, name: "Akshara Food Court" },
-    { img: venture8, name: "Aaryans Edutainment Park" },
-    { img: venture9, name: "Aaryans Dog Kennel" },
-    { img: venture10, name: "Aaryans Day Care" },
-    { img: venture11, name: "Aaryans Dairy Farm" },
+  { img: venture1, name: "Aaryans YO Bhajiwala" },
+  { img: venture2, name: "Aaryans Commando Training Camp" },
+  { img: venture3, name: "Aaryans Farm Fresh" },
+  { img: venture4, name: "Aaryans Preschool" },
+  { img: venture5, name: "Aaryans Sharpner" },
+  { img: venture6, name: "Aaryans Riverwood Resort" },
+  { img: venture7, name: "Akshara Food Court" },
+  { img: venture8, name: "Aaryans Edutainment Park" },
+  { img: venture9, name: "Aaryans Dog Kennel" },
+  { img: venture10, name: "Aaryans Day Care" },
+  { img: venture11, name: "Aaryans Dairy Farm" },
 ];
 
 const statistics = [
@@ -252,7 +252,7 @@ function WelcomeSection() {
             </p>
 
             <a href="#about" className="image-btn">
-              <img src={historyButton} alt="Read Our History" /> 
+              <img src={historyButton} alt="Read Our History" />
             </a>
           </div>
         </div>
@@ -277,10 +277,23 @@ function QuickEnquiry() {
   });
 
   const [statusMessage, setStatusMessage] = useState("");
+  const [showSuccessPopup, setShowSuccessPopup] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
-
+  const [branches, setBranches] = useState([]);
   const enquiryImages = [enquiryImage1, enquiryImage2];
 
+  useEffect(() => {
+    const fetchBranches = async () => {
+      try {
+        const response = await api.get("/branches");
+        setBranches(response.data.data);
+      } catch (error) {
+        console.error("Error fetching branches:", error);
+      }
+    };
+
+    fetchBranches();
+  }, []);
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((previous) => (previous + 1) % enquiryImages.length);
@@ -304,56 +317,88 @@ function QuickEnquiry() {
     const form = event.currentTarget;
     const formData = new FormData(form);
 
+    const dobInput = form.elements.namedItem("dob");
+    const dobValue = dobInput.value;
+
+    if (!dobValue) {
+      alert("Please select Date of Birth.");
+      dobInput.focus();
+      return;
+    }
+
+    const selectedDob = new Date(dobValue + "T00:00:00");
+
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    const minimumDob = new Date(
+      today.getFullYear() - 18,
+      today.getMonth(),
+      today.getDate()
+    );
+
+    if (selectedDob > today) {
+      alert("Date of Birth cannot be in the future.");
+      dobInput.focus();
+      return;
+    }
+
+    if (selectedDob < minimumDob) {
+      alert("Student's age cannot be more than 18 years.");
+      dobInput.focus();
+      return;
+    }
+
     const payload = {
-        student_name: formData.get("studentName"),
-        dob: formData.get("dob"),
-        gender: formData.get("gender"),
-        class_applying_for: formData.get("className"),
-        admission_year: formData.get("admissionYear"),
+      student_name: formData.get("studentName"),
+      branch_id: formData.get("branch_id"),
+      dob: formData.get("dob"),
+      gender: formData.get("gender"),
+      class_applying_for: formData.get("className"),
+      admission_year: formData.get("admissionYear"),
 
-        father_name: formData.get("fatherName"),
-        father_qualification: formData.get("fatherQualification"),
-        father_mobile: formData.get("fatherMobile"),
-        father_whatsapp: formData.get("fatherWhatsapp"),
-        father_email: formData.get("fatherEmail"),
+      father_name: formData.get("fatherName"),
+      father_qualification: formData.get("fatherQualification"),
+      father_mobile: formData.get("fatherMobile"),
+      father_whatsapp: formData.get("fatherWhatsapp"),
+      father_email: formData.get("fatherEmail"),
 
-        mother_qualification: formData.get("motherQualification"),
-        mother_mobile: formData.get("motherMobile"),
-        mother_email: formData.get("motherEmail"),
-        mother_whatsapp: formData.get("motherWhatsapp"),
+      mother_qualification: formData.get("motherQualification"),
+      mother_mobile: formData.get("motherMobile"),
+      mother_email: formData.get("motherEmail"),
+      mother_whatsapp: formData.get("motherWhatsapp"),
 
-        address: formData.get("address"),
-        pin: formData.get("pin"),
+      address: formData.get("address"),
+      pin: formData.get("pin"),
 
-        previous_school: formData.get("previousSchool"),
-        previous_standard: formData.get("previousStandard"),
-        leaving_reason: formData.get("leavingReason"),
+      previous_school: formData.get("previousSchool"),
+      previous_standard: formData.get("previousStandard"),
+      leaving_reason: formData.get("leavingReason"),
     };
 
     try {
-        setStatusMessage("Submitting enquiry...");
+      setStatusMessage("Submitting enquiry...");
 
-        const response = await api.post("/enquiries", payload);
+      const response = await api.post("/enquiries", payload);
 
-        setStatusMessage(response.data.message);
-
-        form.reset();
+      setShowSuccessPopup(true);
+      form.reset();
 
     } catch (error) {
-        console.error("Enquiry submission error:", error);
+      console.error("Enquiry submission error:", error);
 
-        if (error.response?.status === 422) {
-            const errors = error.response.data.errors;
-            const firstError = Object.values(errors)[0][0];
+      if (error.response?.status === 422) {
+        const errors = error.response.data.errors;
+        const firstError = Object.values(errors)[0][0];
 
-            setStatusMessage(firstError);
-        } else {
-            setStatusMessage(
-                "Unable to submit enquiry. Please try again."
-            );
-        }
+        setStatusMessage(firstError);
+      } else {
+        setStatusMessage(
+          "Unable to submit enquiry. Please try again."
+        );
+      }
     }
-};
+  };
 
   const classes = [
     "Nursery",
@@ -395,7 +440,7 @@ function QuickEnquiry() {
 
           <form className="enquiry-form" onSubmit={handleSubmit}>
             <div className="form-field">
-              <label htmlFor="studentName">Student Full Name</label>
+              <label htmlFor="studentName">Student Full Name *</label>
               <input
                 id="studentName"
                 name="studentName"
@@ -407,11 +452,11 @@ function QuickEnquiry() {
 
             <div className="form-row">
               <div className="form-field">
-                <label htmlFor="dob">Date of Birth</label>
+                <label htmlFor="dob">Date of Birth *</label>
                 <input id="dob" name="dob" type="date" required />
               </div>
               <div className="form-field">
-                <label htmlFor="gender">Gender</label>
+                <label htmlFor="gender">Gender *</label>
                 <select id="gender" name="gender" defaultValue="" required>
                   <option value="">Select Gender</option>
                   <option value="Male">Male</option>
@@ -422,7 +467,7 @@ function QuickEnquiry() {
 
             <div className="form-row">
               <div className="form-field">
-                <label htmlFor="className">Standard</label>
+                <label htmlFor="className">Standard *</label>
                 <select id="className" name="className" defaultValue="" required>
                   <option value="">Select Standard</option>
                   {classes.map((className) => (
@@ -431,18 +476,35 @@ function QuickEnquiry() {
                 </select>
               </div>
               <div className="form-field">
-                <label htmlFor="admissionYear">Admission for Year</label>
+                <label htmlFor="admissionYear">Admission for Year *</label>
                 <input id="admissionYear" name="admissionYear" placeholder="2026-27" />
               </div>
             </div>
-
             <div className="form-field">
-              <label htmlFor="fatherName">Father's Name</label>
+              <label htmlFor="branch_id">Select Branch *</label>
+
+              <select
+                id="branch_id"
+                name="branch_id"
+                defaultValue=""
+                required
+              >
+                <option value="">Select Branch</option>
+
+                {branches.map((branch) => (
+                  <option key={branch.id} value={branch.id}>
+                    {branch.name} - {branch.city}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div className="form-field">
+              <label htmlFor="fatherName">Father's Name *</label>
               <input id="fatherName" name="fatherName" placeholder="Enter Father's Name" required />
             </div>
 
             <div className="form-field">
-              <label htmlFor="address">Address</label>
+              <label htmlFor="address">Address *</label>
               <textarea id="address" name="address" rows={2} placeholder="Enter Address" required />
             </div>
 
@@ -459,7 +521,7 @@ function QuickEnquiry() {
 
             <div className="form-row">
               <div className="form-field">
-                <label htmlFor="fatherMobile">Father's Mobile</label>
+                <label htmlFor="fatherMobile">Father's Mobile *</label>
                 <input id="fatherMobile" name="fatherMobile" type="tel" inputMode="numeric" pattern="[0-9]{10}" maxLength={10} placeholder="Mobile Number" required />
               </div>
               <div className="form-field">
@@ -517,6 +579,27 @@ function QuickEnquiry() {
               <p className="enquiry-status" role="status">{statusMessage}</p>
             )}
           </form>
+          {showSuccessPopup && (
+            <div className="success-popup-overlay">
+              <div className="success-popup">
+                <div className="success-popup-icon">✓</div>
+
+                <h2>Enquiry Submitted!</h2>
+
+                <p>
+                  Thank you for your interest in Aaryans World School.
+                  Our admission team will contact you shortly.
+                </p>
+
+                <button
+                  type="button"
+                  onClick={() => setShowSuccessPopup(false)}
+                >
+                  Continue
+                </button>
+              </div>
+            </div>
+          )}
         </div>
 
 
@@ -622,54 +705,99 @@ function CampusGallery() {
 
 
 function PremiumVentures() {
-    return (
-        <section
-            className="ventures-section"
-            style={{
-                backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.20)), url("${venturesBackground}")`,
-            }}
-        >
-            <div className="ventures-container">
-                <div className="ventures-heading">
-                    <span className="ventures-subtitle">
-                        <span className="ventures-heading-line"></span>
-                        BEYOND ACADEMICS
-                    </span>
+  return (
+    <section
+      className="ventures-section"
+      style={{
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.20)), url("${venturesBackground}")`,
+      }}
+    >
+      <div className="ventures-container">
+        <div className="ventures-heading">
+          <span className="ventures-subtitle">
+            <span className="ventures-heading-line"></span>
+            BEYOND ACADEMICS
+          </span>
 
-                    <h2>Our Premium Ventures</h2>
+          <h2>Our Premium Ventures</h2>
 
-                    <div className="ventures-title-underline"></div>
+          <div className="ventures-title-underline"></div>
 
-                    <p>
-                        Specialized divisions designed to nurture talent and
-                        leadership in every field.
-                    </p>
+          <p>
+            Specialized divisions designed to nurture talent and
+            leadership in every field.
+          </p>
+        </div>
+
+        <div className="ventures-grid">
+          {ventures.map((venture, index) => (
+            <div
+              className="venture-item"
+              key={venture.name}
+              style={{ animationDelay: `${index * 30}ms` }}
+            >
+              <div className="venture-mini-card">
+                <div className="venture-logo-wrapper">
+                  <img
+                    src={venture.img}
+                    alt={venture.name}
+                    loading="lazy"
+                  />
                 </div>
-
-                <div className="ventures-grid">
-                    {ventures.map((venture, index) => (
-                        <div
-                            className="venture-item"
-                            key={venture.name}
-                            style={{ animationDelay: `${index * 30}ms` }}
-                        >
-                            <div className="venture-mini-card">
-                                <div className="venture-logo-wrapper">
-                                    <img
-                                        src={venture.img}
-                                        alt={venture.name}
-                                        loading="lazy"
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
+              </div>
             </div>
-        </section>
-    );
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }
+function AnimatedCounter({ target, suffix = "+" }) {
+  const [count, setCount] = useState(0);
+  const counterRef = useRef(null);
 
+  useEffect(() => {
+    const element = counterRef.current;
+    if (!element) return;
+
+    let animationFrame;
+    let observer;
+
+    observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        const duration = 2000;
+        const startTime = performance.now();
+
+        const animate = (currentTime) => {
+          const progress = Math.min((currentTime - startTime) / duration, 1);
+          const easedProgress = 1 - Math.pow(1 - progress, 3);
+
+          setCount(Math.floor(easedProgress * target));
+
+          if (progress < 1) {
+            animationFrame = requestAnimationFrame(animate);
+          }
+        };
+
+        animationFrame = requestAnimationFrame(animate);
+        observer.disconnect();
+      }
+    }, { threshold: 0.5 });
+
+    observer.observe(element);
+
+    return () => {
+      observer.disconnect();
+      cancelAnimationFrame(animationFrame);
+    };
+  }, [target]);
+
+  return (
+    <strong ref={counterRef}>
+      {count.toLocaleString("en-IN")}{suffix}
+    </strong>
+  );
+}
 
 function SchoolStatistics() {
   return (
@@ -677,7 +805,13 @@ function SchoolStatistics() {
       <div className="statistics-container">
         {statistics.map((item) => (
           <div className="statistic-item" key={item.label}>
-            <strong>{item.number}</strong>
+            {item.label === "Students" ? (
+              <AnimatedCounter target={12000} />
+            ) : item.label === "Happy Parents" ? (
+              <AnimatedCounter target={40000} />
+            ) : (
+              <strong>{item.number}</strong>
+            )}
             <span>{item.label}</span>
           </div>
         ))}
@@ -685,35 +819,6 @@ function SchoolStatistics() {
     </section>
   );
 }
-
-function FloatingActions() {
-  return (
-    <div className="floating-actions">
-      <a
-        href="https://play.google.com/store"
-        className="floating-action play-store-action"
-        target="_blank"
-        rel="noreferrer"
-        aria-label="Google Play Store"
-        title="Google Play Store"
-      >
-        ▶
-      </a>
-
-      <a
-        href="https://wa.me/"
-        className="floating-action whatsapp-action"
-        target="_blank"
-        rel="noreferrer"
-        aria-label="WhatsApp"
-        title="WhatsApp"
-      >
-        ☎
-      </a>
-    </div>
-  );
-}
-
 
 function Home() {
   return (
@@ -725,7 +830,6 @@ function Home() {
       <CampusGallery />
       <PremiumVentures />
       <SchoolStatistics />
-      <FloatingActions />
     </div>
   );
 }

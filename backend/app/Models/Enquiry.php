@@ -10,6 +10,7 @@ class Enquiry extends Model
     use HasFactory;
 
     protected $fillable = [
+        'branch_id',
         'student_name',
         'dob',
         'gender',

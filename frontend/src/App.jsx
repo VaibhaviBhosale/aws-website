@@ -23,6 +23,10 @@ import CorporateOffice from "./pages/CorporateOffice/CorporateOffice";
 import WarjeDisclosure from "./pages/Disclosure/WarjeDisclosure";
 import BhilarewadiDisclosure from "./pages/Disclosure/BhilarewadiDisclosure";
 
+
+import Gallery from "./pages/Gallery/Gallery";
+import VideoGallery from "./pages/Gallery/VideoGallery";
+
 import "./App.css";
 
 function App() {
@@ -54,10 +58,10 @@ return ( <Router> <div className="app"> <Header />
 <Route path="/corporate-office" element={<CorporateOffice />} />
 
 <Route path="/mandatory-disclosure/warje" element={<WarjeDisclosure />} />
-<Route
-  path="/mandatory-disclosure/bhilarewadi"
-  element={<BhilarewadiDisclosure />}
-/>
+<Route path="/mandatory-disclosure/bhilarewadi" element={<BhilarewadiDisclosure />} />
+
+<Route path="/gallery/photos" element={<Gallery />} />
+<Route path="/gallery/videos" element={<VideoGallery />} />
 
         <Route path="*" element={<Home />} />
       </Routes>

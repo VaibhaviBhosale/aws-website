@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Enquiry;
+use App\Models\Branch;
 use Illuminate\Http\Request;
 
 class EnquiryController extends Controller
@@ -11,8 +12,9 @@ class EnquiryController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'student_name' => 'required|string|max:255',
-            'dob' => 'required|date|before_or_equal:today',
+            'branch_id' => 'required|exists:branches,id',
+            'student_name' => ['required', 'string', 'max:100', 'regex:/^[\pL\s.\'-]+$/u'],
+            'dob' => 'required|date|before_or_equal:today|after_or_equal:' . now()->subYears(18)->toDateString(),
             'gender' => 'required|string|max:20',
             'class_applying_for' => 'required|string|max:100',
             'admission_year' => 'nullable|string|max:20',
@@ -44,4 +46,17 @@ class EnquiryController extends Controller
             'data' => $enquiry,
         ], 201);
     }
+
+    public function getBranches()
+{
+    $branches = Branch::where('active', 1)
+        ->select('id', 'name', 'city')
+        ->orderBy('name')
+        ->get();
+
+    return response()->json([
+        'success' => true,
+        'data' => $branches
+    ]);
+}
 }

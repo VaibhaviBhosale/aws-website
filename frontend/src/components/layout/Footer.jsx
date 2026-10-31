@@ -5,7 +5,7 @@ import {
   Building2,
   ChevronRight,
 } from "lucide-react";
-
+import { Link } from "react-router-dom";
 import "./Footer.css";
 import schoolLogo from "../../assets/images/logo_aws.png";
 import { useState } from "react";
@@ -36,10 +36,9 @@ function Footer() {
 
           {/* School branding */}
           <div className="footer-brand">
-            <a href="/" className="footer-logo">
+            <Link to="/" className="footer-logo">
               <img src={schoolLogo} alt="Aaryans World School" />
-            </a>
-
+            </Link>
             <p className="footer-description">
               Nurturing minds, building character, and shaping the leaders
               of tomorrow.
@@ -110,20 +109,20 @@ function Footer() {
                         <ul className="footer-sub-links">
                           {link.children.map((child) => (
                             <li key={child.label}>
-                              <a href={child.href}>
+                              <Link to={child.href}>
                                 <ChevronRight size={16} />
                                 <span>{child.label}</span>
-                              </a>
+                              </Link>
                             </li>
                           ))}
                         </ul>
                       )}
                     </>
                   ) : (
-                    <a href={link.href}>
+                    <Link to={link.href}>
                       <ChevronRight size={19} />
                       <span>{link.label}</span>
-                    </a>
+                    </Link>
                   )}
                 </li>
               ))}
@@ -213,6 +212,37 @@ function Footer() {
             </a>
           </p>
         </div>
+      </div>
+
+      {/* Floating Action Buttons */}
+      <div className="float-buttons">
+        {/* School App */}
+        <a
+          href="https://forms.edunexttechnologies.com/erp-api/aaryans-world-school/index.php"
+          className="playstore-float"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Open School App"
+          aria-label="Open School App"
+        >
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M8 5v14l11-7L8 5z" />
+          </svg>
+        </a>
+
+        {/* WhatsApp */}
+        <a
+          href="https://wa.me/9699774488"
+          className="whatsapp-float"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Chat on WhatsApp"
+          aria-label="Chat on WhatsApp"
+        >
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12.04 2C6.52 2 2.02 6.48 2.02 12c0 1.77.47 3.43 1.3 4.88L2 22l5.27-1.38A10 10 0 1 0 12.04 2zm0 18.2c-1.5 0-2.97-.4-4.25-1.16l-.3-.18-3.13.82.84-3.05-.2-.32A8.17 8.17 0 1 1 12.04 20.2zm4.48-6.12c-.25-.13-1.48-.73-1.7-.81-.23-.08-.4-.13-.57.13-.17.25-.65.81-.8.98-.15.17-.3.19-.55.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.41-1.75-.15-.25-.02-.39.11-.52.12-.11.25-.3.38-.44.12-.15.16-.25.25-.42.08-.17.04-.32-.02-.45-.06-.13-.57-1.37-.78-1.88-.2-.5-.41-.43-.57-.44h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1s.9 2.43 1.02 2.6c.13.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.44.52.6.19 1.15.16 1.58.1.48-.07 1.48-.6 1.69-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.16-.48-.29z" />
+          </svg>
+        </a>
       </div>
     </footer>
   );
