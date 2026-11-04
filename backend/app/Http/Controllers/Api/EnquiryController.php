@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Enquiry;
 use App\Models\Branch;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class EnquiryController extends Controller
 {
@@ -47,16 +48,17 @@ class EnquiryController extends Controller
         ], 201);
     }
 
-    public function getBranches()
+public function getBranches()
 {
-    $branches = Branch::where('active', 1)
-        ->select('id', 'name', 'city')
-        ->orderBy('name')
+    $branches = DB::table('branches')
+        ->where('status', 'active')
+        ->select('id', 'name', 'city', 'state')
         ->get();
 
     return response()->json([
         'success' => true,
         'data' => $branches
-    ]);
+    ], 200);
 }
+
 }
