@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Api\EnquiryController;
 use App\Http\Controllers\Api\GalleryController;
+use App\Http\Controllers\Api\AdmissionController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -13,3 +14,4 @@ Route::get('/user', function (Request $request) {
 Route::post('/enquiries', [EnquiryController::class, 'store']);
 Route::get('/branches', [EnquiryController::class, 'getBranches']);
 Route::get('/gallery', [GalleryController::class, 'index']);
+Route::post('/admission/verify-enquiry',[AdmissionController::class, 'verifyEnquiry']);
