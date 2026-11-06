@@ -21,6 +21,8 @@ class AdmissionRegistration extends Model
         'payment_status',
         'payment_id',
         'paid_at',
+        'admission_access_token_hash',
+        'admission_access_token_expires_at',
         'status',
     ];
 
@@ -29,6 +31,7 @@ class AdmissionRegistration extends Model
         'otp_verified_at' => 'datetime',
         'paid_at' => 'datetime',
         'amount' => 'decimal:2',
+        'admission_access_token_expires_at' => 'datetime',
     ];
 
     public function enquiry()
